@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const MatrixRainingCode = () => {
     const canvasRef = useRef(null);
@@ -13,15 +13,15 @@ const MatrixRainingCode = () => {
         const charArray = characters.split("");
         let drops = [];
 
-        // Function to generate a random color (red)
+        // Function to generate a random red color
         const getRandomRedColor = () => {
-            const redChannel = Math.floor(Math.random() * 256).toString(16).padStart(2, '0');
-            return `#ff${redChannel}${redChannel}`;
+            const redChannel = Math.floor(Math.random() * 128).toString(16).padStart(2, '0'); // Adjust the range
+            return `#ff${redChannel}00`;
         };
 
-        // Function to generate a random color (green)
+        // Function to generate a random green color
         const getRandomGreenColor = () => {
-            const greenChannel = Math.floor(Math.random() * 256).toString(16).padStart(2, '0');
+            const greenChannel = Math.floor(Math.random() * 128).toString(16).padStart(2, '0'); // Adjust the range
             return `#00${greenChannel}00`;
         };
         // const getRandomColor = () => {
