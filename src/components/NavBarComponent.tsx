@@ -12,7 +12,7 @@ import {
 
 const NavBarComponent: React.FC = () => {
     return (
-        <Stack direction="row" paddingTop={5} spacing={"80px"}>
+        <Stack direction="row" paddingTop={5} spacing={"80px"} zIndex={2}>
             <Text color='white' fontSize={25} fontWeight={"medium"}>Hackcouver</Text>
             <Breadcrumb spacing={"60px"} separator={""} >
                 <BreadcrumbItem>++--
