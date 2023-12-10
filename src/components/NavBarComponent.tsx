@@ -4,8 +4,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import {
     Breadcrumb,
     BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbSeparator,
+    BreadcrumbLink
 } from '@chakra-ui/react'
 
 
@@ -26,7 +25,11 @@ const NavBarComponent: React.FC = () => {
                     </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbItem>
-
+                    <BreadcrumbLink as={Link} to='/TimeLine' color='white' fontSize={25}>
+                        TimeLine
+                    </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbItem>
                     <BreadcrumbLink as={Link} to='/Folks' color='white' fontSize={25}>
                         Folks
                     </BreadcrumbLink>

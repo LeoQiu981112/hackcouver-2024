@@ -19,12 +19,15 @@ const About: React.FC = () => (
             bottom="0"
             w="100vw"
             h="100vh"
-            bgGradient="linear(to-tl, #000000, #ffffff, #808080)"
+            bgGradient="linear(to-t, #000000, #ffffff, #808080)"
             overflow={"hidden"}
             bgColor="gray.800"
             color="white"
         >
+
             <Box position="absolute" top="0" left="10%" right="0" bottom="0" zIndex="2">
+
+
                 <NavBarComponent />
             </Box>
             <Box position="absolute" left="7%" top="15%" w="35%" h="45%" >

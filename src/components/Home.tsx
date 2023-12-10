@@ -7,8 +7,6 @@ import Logo from './Logo'
 import v_logo from '../assets/v_logo.png';
 
 
-// 2880x1620
-
 const Home: React.FC = () => (
     <>
 
