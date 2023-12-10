@@ -1,22 +1,130 @@
 import React from "react";
-import MenuComponent from './MenuComponent';
 import NavBarComponent from './NavBarComponent';
-import { Box, Flex } from "@chakra-ui/react";
+import { Flex, Grid, GridItem, Center, CardBody, CardHeader } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
+import { Card } from "@chakra-ui/react";
 
-const Panelists: React.FC = () => (
-    <Flex position="relative" w="100vw" h="100vh">
-        <Box position="absolute" top="0" left="0">
-            <h1>Panelists7</h1>
-        </Box>
-        {/* navbar should be centered */}
-        <Box position="absolute" top="0" left="30%">
-            <NavBarComponent />
-        </Box>
+import { Avatar, AvatarBadge, AvatarGroup } from '@chakra-ui/react'
+import { Wrap, WrapItem } from "@chakra-ui/react";
+import { RoundAvatar, SquareAvatar } from "./AvatarItems";
 
-        <Box position="absolute" top="0" right="0">
-            <MenuComponent />
-        </Box>
-    </Flex>
-);
 
-export default Panelists;
+export default function FAQ() {
+
+    const Judges = [
+        {
+            name: "Dan Abrahmov",
+            avatar: "https://bit.ly/dan-abramov",
+            score: 3
+        },
+        {
+            name: "Dan Abrahmov",
+            avatar: "https://bit.ly/dan-abramov",
+            score: 3
+        },
+        {
+            name: "Dan Abrahmov",
+            avatar: "https://bit.ly/dan-abramov",
+            score: 3
+        },
+        {
+            name: "Dan Abrahmov",
+            avatar: "https://bit.ly/dan-abramov",
+            score: 3
+        },
+        {
+            name: "Dan Abrahmov",
+            avatar: "https://bit.ly/dan-abramov",
+            score: 3
+        },
+        {
+            name: "Dan Abrahmov",
+            avatar: "https://bit.ly/dan-abramov",
+            score: 3
+        },
+        {
+            name: "Dan Abrahmov",
+            avatar: "https://bit.ly/dan-abramov",
+            score: 3
+        },
+        {
+            name: "Dan Abrahmov",
+            avatar: "https://bit.ly/dan-abramov",
+            score: 3
+        }
+    ] 
+
+    return (
+        <>
+        <NavBarComponent />
+
+        <Flex direction={'column'} gap={8}>
+
+                    <Center> 
+                        <Heading>Opening Ceremony Panelist</Heading>
+                    </Center>
+
+               
+                <Flex align={'center'} justify={'center'} gap={20}>
+                    {/* Judges */}
+                    <Card padding={'1rem'}>
+                        <CardHeader>
+                            <Heading>Judges</Heading>
+                        </CardHeader>
+
+                        <CardBody>
+                            <Grid templateColumns='repeat(4, 1fr)' gap={10} margin={'8px'}>
+                            {Judges.map(() => (
+                                <GridItem colSpan={1}>
+                                    <Wrap>
+                                        <WrapItem>
+                                            <Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
+                                        </WrapItem>
+                                    </Wrap>
+                                </GridItem>
+                            ))}
+                            </Grid>
+                        </CardBody>
+
+                    </Card>
+                    
+                    {/* Mentors */}
+                    <Card padding={'1rem'}>
+                        <CardHeader>
+                            <Heading>Mentors</Heading>
+                        </CardHeader>
+
+                        <CardBody>
+                            <Grid templateColumns='repeat(4, 1fr)' gap={10} margin={'8px'}>
+                                {Judges.map(() => (
+                                    <GridItem colSpan={1}>
+                                        <Wrap>
+                                            <WrapItem>
+                                                <Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
+                                            </WrapItem>
+                                        </Wrap>
+                                    </GridItem>
+                                ))}
+                            </Grid>
+                        </CardBody>
+                    </Card>
+
+
+                    <Card>
+                        <RoundAvatar />
+                    </Card>
+                    <Card>
+                        <SquareAvatar/>
+                    </Card>
+                </Flex>
+
+
+
+
+
+        </Flex>
+        </>
+
+    )
+}
+

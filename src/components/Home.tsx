@@ -5,6 +5,7 @@ import NavBarComponent from './NavBarComponent';
 import Logo from './Logo'
 
 import v_logo from '../assets/v_logo.png';
+import TimeLine from './TimeLine';
 
 
 const Home: React.FC = () => (
@@ -32,7 +33,9 @@ const Home: React.FC = () => (
             </Stack>
             <Box position="absolute" bottom="10%">
                 {/* Your additional boxes here */}
+                
             </Box>
+            
         </Box>
     </>
 );

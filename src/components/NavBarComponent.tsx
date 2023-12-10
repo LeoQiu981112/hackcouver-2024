@@ -30,13 +30,18 @@ const NavBarComponent: React.FC = () => {
                     </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbItem>
-                    <BreadcrumbLink as={Link} to='/Folks' color='white' fontSize={25}>
-                        Folks
+                    <BreadcrumbLink as={Link} to='/Panelists' color='white' fontSize={25}>
+                        Panelists
                     </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbItem>
                     <BreadcrumbLink as={Link} to='/Contact' color='white' fontSize={25}>
                         Contact Us
+                    </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbItem>
+                    <BreadcrumbLink as={Link} to='/FAQ' color='white' fontSize={25}>
+                        FAQ
                     </BreadcrumbLink>
                 </BreadcrumbItem>
             </Breadcrumb>
