@@ -27,12 +27,14 @@ function TimelineComponent() {
     })
 
     return (
-        <Stepper index={activeStep} orientation='vertical' height='400px' size='lg' gap='0' colorScheme='red' // Scales the size to 120%
+
+
+        <Stepper index={activeStep} orientation='vertical' height='400px' size='lg' gap='0' colorScheme='red'// Scales the size to 120%
         >
             {
                 steps.map((step, index) => (
-                    <Step key={index}>
-                        <StepIndicator>
+                    <Step key={index} >
+                        <StepIndicator style={{ transform: 'scale(1.5)' }}>
                             <StepStatus
                                 complete={<StepIcon />}
                                 incomplete={<StepNumber />}
@@ -40,9 +42,9 @@ function TimelineComponent() {
                             />
                         </StepIndicator>
 
-                        <Box flexShrink='0' >
+                        <Box bgColor="blue">
                             <StepTitle fontSize="40px" color="white">{step.title}</StepTitle>
-                            <StepDescription fontSize="30px" style={{ background: 'linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>{step.description}</StepDescription>
+                            <StepDescription fontSize="30px" color="silver" >{step.description}</StepDescription>
                         </Box>
 
                         <StepSeparator />
@@ -50,6 +52,8 @@ function TimelineComponent() {
                 ))
             }
         </ Stepper >
+
+
     )
 }
 export default TimelineComponent;
