@@ -1,37 +1,44 @@
-import React from 'react';
-import { Flex, Box, Text, Container, Image, Stack, Button, Center } from '@chakra-ui/react';
+import { Flex, Box, Stack, Button, Center } from '@chakra-ui/react';
 import MatrixRainingCode from './MatrixRainingEffect';
-import NavBarComponent from './NavBarComponent';
 import Logo from './Logo'
+import NavBar from './NavBar';
 
-import v_logo from '../assets/v_logo.png';
-import TimeLine from './TimeLine';
 
-const Home: React.FC = () => (
-    <>
-        <MatrixRainingCode className="absolute inset-0" style={{ zIndex: 1 }} />
-        {/* Overlay content */}
-        <NavBarComponent />
+export default function Home() {
 
-        {/* Additional content */}
-        <Stack direction={"column"} position="absolute" top="25%" left="30%" gap={10}>
-            <Logo />
-            <Center>
-                <Button width={"100px"} height={"50px"} color='black' bgColor={"gray.200"} variant='ghost' opacity={0.8} borderColor='red.900' borderRadius={'xl'}
-                    _hover={{
-                        bg: 'white',
-                        borderColor: 'black',
-                    }} // Changes the background to blue when hovered
 
-                >
-                    Apply
-                </Button>
-            </Center>
-        </Stack>
-        <Box position="absolute" bottom="10%">
-            {/* Your additional boxes here */}
-        </Box>
-    </>
-);
+    return (
 
-export default Home;
+        <>
+            <MatrixRainingCode className="absolute inset-0" style={{ zIndex: 1 }} />
+            {/* Overlay content */}
+            
+            <Flex>
+                <Flex position='absolute' top='0'>
+                    <NavBar />
+                </Flex>
+
+                    {/* Additional content */}
+                    <Stack direction={"column"} position="absolute" top="25%" left="30%" gap={10}>
+                        <Logo />
+                        <Center>
+                            <Button width={"100px"} height={"50px"} color='black' bgColor={"gray.200"} variant='ghost' opacity={0.8} borderColor='red.900' borderRadius={'xl'}
+                                _hover={{
+                                    bg: 'white',
+                                    borderColor: 'black',
+                                }} // Changes the background to blue when hovered
+                                
+                                >
+                                Apply
+                            </Button>
+                        </Center>
+                    </Stack>
+                    <Box position="absolute" bottom="10%">
+                        {/* Your additional boxes here */}
+                    </Box>
+            </Flex>
+        </>
+    )
+    
+
+}

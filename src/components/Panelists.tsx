@@ -1,13 +1,13 @@
-import React from "react";
-import NavBarComponent from './NavBarComponent';
-import { Flex, Grid, GridItem, Center, CardBody, CardHeader } from "@chakra-ui/react";
+
+import { Flex, Grid, GridItem, CardBody, CardHeader } from "@chakra-ui/react";
 import { Heading } from "@chakra-ui/react";
 import { Card } from "@chakra-ui/react";
 
-import { Avatar, AvatarBadge, AvatarGroup } from '@chakra-ui/react'
+import { Avatar} from '@chakra-ui/react'
 import { Wrap, WrapItem } from "@chakra-ui/react";
 import { RoundAvatar, SquareAvatar } from "./AvatarItems";
 
+import NavBar from "./NavBar";
 
 export default function FAQ() {
 
@@ -56,24 +56,23 @@ export default function FAQ() {
 
     return (
         <>
-        <NavBarComponent />
+        <NavBar />
 
-        <Flex direction={'column'} gap={8}>
-
-                    <Center> 
-                        <Heading>Opening Ceremony Panelist</Heading>
-                    </Center>
+        <Flex direction='column' gap={8} align='center'>
 
                
-                <Flex align={'center'} justify={'center'} gap={20}>
+                <Heading as='h1' size='2xl' margin='2rem'>Panelists</Heading>
+              
+               
+                <Flex wrap='wrap' align='center' justify='center' gap='20'>
                     {/* Judges */}
-                    <Card padding={'1rem'}>
+                    <Card padding='1rem'>
                         <CardHeader>
                             <Heading>Judges</Heading>
                         </CardHeader>
 
                         <CardBody>
-                            <Grid templateColumns='repeat(4, 1fr)' gap={10} margin={'8px'}>
+                            <Grid templateColumns='repeat(4, 1fr)' gap='10' margin='8px'>
                             {Judges.map(() => (
                                 <GridItem colSpan={1}>
                                     <Wrap>

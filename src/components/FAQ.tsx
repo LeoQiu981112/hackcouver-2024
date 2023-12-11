@@ -1,8 +1,8 @@
-import { Center, Flex } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import { Heading } from '@chakra-ui/react';
 import { Card, CardBody, } from '@chakra-ui/react'
 
-import NavBarComponent from './NavBarComponent';
+import NavBar from './NavBar';
 
 
 export default function FAQ() {
@@ -27,21 +27,23 @@ export default function FAQ() {
 
     return (
         <>
-        <NavBarComponent />
+        <NavBar />
         
-        <Center> 
-            <Heading>FAQ</Heading>
-        </Center>
         
-        <Flex direction={'column'} gap={'6'} margin={'4rem'} align={'center'} >
-            {QandA.map((item) => (
-                <Card padding={'1rem'} key={item.question} maxWidth={'800px'}>
+        <Flex direction='column' gap='6' margin='1rem' align='center' >
+
+            <Heading as='h1' size='2xl' margin='2rem'>FAQ</Heading>
+
+            {QandA.map((item, index) => (
+                <Card padding='1rem' key={index} maxWidth='800px'>
                     <Heading>{item.question}</Heading>
                     <CardBody>
                         {item.answer}
                     </CardBody>
                 </Card>
             ))}
+
+
         </Flex>
 
         </>

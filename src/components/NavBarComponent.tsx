@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Text, Stack } from '@chakra-ui/react';
-import { useNavigate, Link } from 'react-router-dom';
+import { Text, Stack } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 import {
     Breadcrumb,
     BreadcrumbItem,

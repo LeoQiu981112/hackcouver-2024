@@ -1,25 +1,26 @@
-import React from "react";
-import NavBarComponent from './NavBarComponent';
+import NavBar from './NavBar';
 import TimelineComponent from "./TimeLineComponent";
-import RotatingSquare from "./rotating_square";
+
 import {
-    Box,
     Flex,
-    Text,
-    Image,
-    Heading
+    Heading,
 } from "@chakra-ui/react";
 
 
-const TimeLine: React.FC = () => (
-    <Flex direction="column" align="left" >
-        <NavBarComponent />
-        <Heading size='md' fontSize="50px" color="white" fontWeight="bold" marginBottom={10}>
-            Timeline
-        </Heading>
-        <TimelineComponent />
-    </Flex>
-);
+export default function Timeline() {
+    return (
+        <>
+        <NavBar />
+        <Flex direction="column" align="center" >
+
+            <Heading as='h1' size='2xl' margin='2rem'>Timeline</Heading>
+           
+            <TimelineComponent />
+
+        </Flex>
+        </>
+    )
+
+}
 
 
-export default TimeLine;

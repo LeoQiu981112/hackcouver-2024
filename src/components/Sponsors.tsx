@@ -1,22 +1,29 @@
-import React from "react";
-import MenuComponent from './MenuComponent';
-import NavBarComponent from './NavBarComponent';
-import { Box, Flex } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
 
-const Sponsors: React.FC = () => (
-    <Flex position="relative" w="100vw" h="100vh">
-        <Box position="absolute" top="0" left="0">
-            <h1>Sponsors8</h1>
-        </Box>
-        {/* navbar should be centered */}
-        <Box position="absolute" top="0" left="30%">
-            <NavBarComponent />
-        </Box>
+import NavBar from "./NavBar";
 
-        <Box position="absolute" top="0" right="0">
-            <MenuComponent />
-        </Box>
-    </Flex>
-);
+export default function Sponsors() {
 
-export default Sponsors;
+    return (
+        <>
+        <NavBar />
+
+        <Flex
+            direction='column'
+            align='center'
+            justify='center'
+            marginX='1rem'
+        >
+            <Heading as='h1' size='2xl' marginTop='1rem' marginBottom='4rem'>Sponsors</Heading>
+            <Heading as='h2' size='lg'>Sponsor 1</Heading>
+            <Heading as='h2' size='lg'>Sponsor 2</Heading>
+            <Heading as='h2' size='lg'>Sponsor 3</Heading>
+
+        </Flex>
+
+
+        </>
+    )
+
+}

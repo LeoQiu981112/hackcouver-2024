@@ -1,22 +1,30 @@
-import React from "react";
-import MenuComponent from './MenuComponent';
-import NavBarComponent from './NavBarComponent';
-import { Box, Flex, Container } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react"
+import { Heading } from "@chakra-ui/react"
+import NavBar  from "./NavBar"
 
-const Contact: React.FC = () => (
-    <>
-        <Box position="absolute" top="0" left="0" bg="blue.600">
-            <h1>Contact4</h1>
-        </Box>
-        {/* navbar should be centered */}
-        <Box position="absolute" top="0" left="30%">
-            <NavBarComponent />
-        </Box>
+export default function Contact(){
 
-        <Box position="absolute" top="0" right="0">
-            <MenuComponent />
-        </Box>
-    </>
-);
 
-export default Contact;
+    return (
+        <>
+        <NavBar /> 
+
+        <Flex direction={'column'} align={'center'} justify={'center'} marginX={'1rem'}>
+
+            <Heading as='h1' size='2xl' marginTop={'1rem'} marginBottom={'4rem'}>Contact Us</Heading>
+
+            
+            <Heading as='h2' size='xl'>Hello@hackouver.com</Heading>
+            <Heading as='h1' size='lg'>Hackers:</Heading>
+            <Heading as='h1' size='lg'>Sponsors:</Heading>
+            <Heading as='h1' size='lg'>Mentors&Volunteers:</Heading>
+       
+
+        </Flex>
+
+
+        </>
+    )
+
+}
+

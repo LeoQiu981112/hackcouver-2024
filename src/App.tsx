@@ -11,12 +11,12 @@ import FAQ from "./components/FAQ";
 const App: React.FC = () => (
   <Routes>
     <Route path="/" element={<Home />} />
-    <Route path="/About" element={<About />} />
-    <Route path="/TimeLine" element={<TimeLine />} />
-    <Route path="/Sponsors" element={<Sponsors />} />
-    <Route path="/Panelists" element={<Panelists />} />
-    <Route path="/Contact" element={<Contact />} />
-    <Route path="/FAQ" element={<FAQ />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/timeline" element={<TimeLine />} />
+    <Route path="/sponsors" element={<Sponsors />} />
+    <Route path="/panelists" element={<Panelists />} />
+    <Route path="/contact" element={<Contact />} />
+    <Route path="/faq" element={<FAQ />} />
   </Routes>
 );
 
