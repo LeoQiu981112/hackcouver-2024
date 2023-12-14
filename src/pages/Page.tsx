@@ -12,17 +12,19 @@ import Sponsors from "../components/Sponsors";
 import Panelists from "../components/Panelists";
 import Contact from "../components/Contact";
 import FAQ from '../components/FAQ';
+import NavBar from '../components/NavBar';
 // Now you can use the imported components from the components folder
 export default function Page() {
 
     return (
         <>
-            <Home />
+            <NavBar />
 
             <Flex direction='column' align='center' justify='center'>
+                <Home />
 
                 <Box marginBottom='1rem'>
-                    <TimeLine />    
+                    <TimeLine />
                 </Box>
 
                 <Box marginBottom='1rem'>
@@ -48,7 +50,7 @@ export default function Page() {
             </Flex>
 
 
-        
+
         </>
     )
 };
