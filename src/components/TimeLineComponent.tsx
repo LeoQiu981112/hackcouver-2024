@@ -29,7 +29,7 @@ function TimelineComponent() {
     return (
 
 
-        <Stepper index={activeStep} orientation='vertical' height='400px' size='lg' gap='0' colorScheme='red'// Scales the size to 120%
+        <Stepper id='timeline' index={activeStep} orientation='vertical' height='400px' size='lg' gap='0' colorScheme='red'// Scales the size to 120%
         >
             {
                 steps.map((step, index) => (

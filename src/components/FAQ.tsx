@@ -2,7 +2,6 @@ import { Flex } from '@chakra-ui/react';
 import { Heading } from '@chakra-ui/react';
 import { Card, CardBody, } from '@chakra-ui/react'
 
-import NavBar from './NavBar';
 
 
 export default function FAQ() {
@@ -27,10 +26,8 @@ export default function FAQ() {
 
     return (
         <>
-        <NavBar />
         
-        
-        <Flex direction='column' gap='6' margin='1rem' align='center' >
+        <Flex id='FAQ-flex' direction='column' gap='6' margin='1rem' align='center' >
 
             <Heading as='h1' size='2xl' margin='2rem'>FAQ</Heading>
 
@@ -42,7 +39,6 @@ export default function FAQ() {
                     </CardBody>
                 </Card>
             ))}
-
 
         </Flex>
 

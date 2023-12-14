@@ -1,7 +1,7 @@
 import TimelineComponent from "./TimeLineComponent";
 
 import {
-    Flex,
+    
     Heading,
 } from "@chakra-ui/react";
 

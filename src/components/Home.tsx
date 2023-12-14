@@ -62,7 +62,6 @@ const Home = () => {
                                     </Tbody>
                                 </Table>
                             </TableContainer>
-
                         </Stack>
 
                         <Stack direction={"column"} gap={10} color={"white"}>
@@ -81,6 +80,7 @@ const Home = () => {
                         {/* Your additional boxes here */}
                     </Box>
                 </GridItem>
+
                 <GridItem pl='2' area={'footer'}>
                     Footer
                 </GridItem>

@@ -1,4 +1,3 @@
-
 import { Flex, Grid, GridItem, CardBody, CardHeader } from "@chakra-ui/react";
 import { Heading } from "@chakra-ui/react";
 import { Card } from "@chakra-ui/react";
@@ -7,7 +6,6 @@ import { Avatar } from '@chakra-ui/react'
 import { Wrap, WrapItem } from "@chakra-ui/react";
 import { RoundAvatar, SquareAvatar } from "./AvatarItems";
 
-import NavBar from "./NavBar";
 
 export default function FAQ() {
 
@@ -56,7 +54,7 @@ export default function FAQ() {
 
     return (
         <>
-            <Flex direction='column' gap={8} align='center'>
+            <Flex id='Panelists-flex' direction='column' gap={8} align='center'>
 
 
                 <Heading as='h1' size='2xl' margin='2rem'>Panelists</Heading>
