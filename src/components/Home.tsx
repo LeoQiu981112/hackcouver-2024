@@ -1,20 +1,21 @@
 import {
-    Box, Grid, GridItem, Stack, Heading, Flex, Link, Center,
+    Box, Heading, Flex, Link,
     Table, Thead, Tbody, Tr, Th, Td, TableContainer
 } from "@chakra-ui/react"
-import NavBar from "./NavBar"
 import Logo from "./Logo"
 import CountdownTimer from "./CountdownTimer";
+import city from "../assets/city.webp"
 
 import MatrixRainingCode from "./MatrixRainingEffect";
-import { Text } from '@chakra-ui/react';
 const targetDate = '2024-03-24';
 const Home = () => {
+
     return (
         <>
-            <Flex direction="column" pl={70} pr={70} mb={70}>
-                <MatrixRainingCode />
-                <Center><Logo /></Center>
+         <Box w="100vw" h="100vh" background={`url(${city})`} backgroundSize="cover" backgroundPosition="center" opacity={0.90}/>
+            <MatrixRainingCode />
+            <Flex direction="column" position="absolute" top={0} pt={100} mb={70}  >
+                <Logo />
 
                 <TableContainer >
                     <Table variant='Simple' color={"white"}>
@@ -27,24 +28,18 @@ const Home = () => {
                         </Thead>
                         <Tbody>
                             <Tr>
-                                <Td fontSize={20}> 24 Mar 01 - 24 Mar 14</Td>
-                                <Td fontSize={20}>SEND ME LOCATION</Td>
+                                <Td fontSize={20}> 24 Mar 01</Td>
+                                <Td fontSize={20}>REMOTE</Td>
                                 <Td fontSize={20}>5pm PST</Td>
                             </Tr>
                         </Tbody>
                     </Table>
                 </TableContainer>
-
-                <Stack direction={"column"} gap={10} color={"white"}>
-
-                    <Heading mb={"auto"} fontSize={40}>Event starts in:</Heading>
-
-                    <Flex gap={4} direction={"row"} alignContent={"center"}>
-
-                        <CountdownTimer targetDate={targetDate} />
-                        <Link bgGradient='linear(to-l, #7928CA, #FF0080)' variant='ghost' fontSize={45} bgClip='text'>Join Now</Link>
-                    </Flex>
-                </Stack>
+                <Flex direction="column" justify="center" align="center" >
+                    <Heading  fontSize={40}>Event starts in:</Heading>
+                    <CountdownTimer targetDate={targetDate} />
+                    <Link bgGradient='linear(to-l, #7928CA, #FF0080)' variant='ghost' fontSize={70} bgClip='text'>Join Now</Link>
+                </Flex>
             </Flex>
 
         </>

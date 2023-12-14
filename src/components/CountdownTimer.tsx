@@ -29,11 +29,11 @@ const CountdownTimer = ({ targetDate }) => {
     });
 
     return (
-        <Box>
+        <Flex textAlign="left" id="timerbox">
             {Object.keys(timeLeft).length ? (
-                <Flex gap={4}>
+                <Flex gap={4} >
                     {Object.keys(timeLeft).map((interval) => (
-                        <Box key={interval} p={5}>
+                        <Box key={interval}  textAlign={"left"}>
                             <Text fontSize="40px" color="white">
                                 {timeLeft[interval]}
                             </Text>
@@ -48,7 +48,7 @@ const CountdownTimer = ({ targetDate }) => {
                     Time's up!
                 </Text>
             )}
-        </Box>
+        </Flex>
     );
 };
 

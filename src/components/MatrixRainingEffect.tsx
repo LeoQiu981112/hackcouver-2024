@@ -13,29 +13,27 @@ const MatrixRainingCode = () => {
         const charArray = characters.split("");
         let drops = [];
 
-        // Function to generate a random red color
-        const getRandomRedColor = () => {
-            const redChannel = Math.floor(Math.random() * 128).toString(16).padStart(2, '0'); // Adjust the range
-            return `#ff${redChannel}00`;
+        // Function to generate a random gray to white color
+        const getRandomGrayColor = () => {
+            const grayColors = ['#111111', '#222222', '#333333', '#444444', '#555555', '#666666', '#777777', '#888888', '#999999', '#aaaaaa', '#bbbbbb', '#cccccc', '#dddddd', '#eeeeee', '#ffffff'];
+            return grayColors[Math.floor(Math.random() * grayColors.length)];
         };
 
-        // Function to generate a random green color
-        const getRandomGreenColor = () => {
-            const greenChannel = Math.floor(Math.random() * 128).toString(16).padStart(2, '0'); // Adjust the range
-            return `#00${greenChannel}00`;
+        
+        // create function to generate random black color
+        const getRandomNeonColor = () => {
+            const neonColors = ['#cb3301', '#ff0066', '#ff6666', '#feff99', '#ffff67', '#ccff66', '#99fe00', '#fe99ff', '#ff99cb', '#fe349a', '#cc33cc', '#cb33ff', '#6633cc', '#3366ff', '#33ccff', '#99ffff', '#33cccc', '#339999', '#00ffcc', '#00cc99', '#66ffcc', '#66ff66', '#66cc66', '#00ff99', '#33ff99', '#33cc33', '#66ff33', '#66ff00', '#66cc00', '#00cc33', '#00ff00', '#33ff00', '#33cc00', '#339933', '#669933', '#99cc33', '#ccff33', '#ffff00', '#ffcc00', '#ff9900', '#ff6600', '#cc6633', '#996633', '#663300', '#ff3300', '#ff0000', '#cc0000', '#990033', '#330000', '#660000'];
+            return neonColors[Math.floor(Math.random() * neonColors.length)];
         };
-        // const getRandomColor = () => {
-        //     const baseColor = Math.random() < 0.5 ? '00' : 'ff'; // '00' for green, 'ff' for red
-        //     const randomChannelValue = Math.floor(Math.random() * 256).toString(16).padStart(2, '0');
-        //     const alpha = Math.random() * 0.5 + 0.5; // Alpha between 0.5 and 1
-        //     return `#${baseColor}${randomChannelValue}${Math.floor(alpha * 255).toString(16).padStart(2, '0')}`;
-        // };
+
+
         const getRandomColor = () => {
-            const isRed = Math.random() < 0.5;
-            if (isRed) {
-                return getRandomRedColor();
+            // pick red or green randomly
+            const redOrGreen = Math.floor(Math.random() * 2);
+            if (redOrGreen === 0) {
+                return getRandomGrayColor();
             } else {
-                return getRandomGreenColor();
+                return getRandomGrayColor();
             }
         };
 
@@ -45,23 +43,22 @@ const MatrixRainingCode = () => {
                 x: Math.random() * width,
                 y: Math.random() * height,
                 char: charArray[Math.floor(Math.random() * charArray.length)],
-                fontSize: Math.floor(Math.random() * 5 + 15),
+                fontSize: Math.floor(Math.random() * 10 + 30),
                 color: getRandomColor(),
                 speed: Math.random() * 1 + 0.3
             };
         }
 
         const draw = () => {
-            ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
-            ctx.fillRect(0, 0, width, height);
-
+            ctx.clearRect(0, 0, width, height); // Clear the entire canvas
+        
             drops.forEach(drop => {
                 ctx.fillStyle = drop.color; // Set the fillStyle to the character's color
-                ctx.font = drop.fontSize + "px monospace";
-                ctx.fillText(drop.char, drop.x, drop.y);
-
+                ctx.font = `${drop.fontSize}px VT323, monospace`; // Use VT323 font
+                ctx.fillText(drop.char, drop.x, drop.y);                ctx.fillText(drop.char, drop.x, drop.y);
+        
                 drop.y += drop.speed; // Move the drop at its speed
-
+        
                 if (drop.y > height) {
                     drop.x = Math.random() * width;
                     drop.color = getRandomColor();
@@ -71,7 +68,7 @@ const MatrixRainingCode = () => {
                 }
             });
         };
-
+        
         const animate = () => {
             draw();
             requestAnimationFrame(animate);
@@ -97,7 +94,6 @@ const MatrixRainingCode = () => {
         left: 0,
         width: '100%',
         pointerEvents: 'none',
-        zIndex: -1
     }} ref={canvasRef}></canvas>;
 };
 

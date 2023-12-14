@@ -1,16 +1,10 @@
-// theme.ts
-
-// 1. import `extendTheme` function
 import { extendTheme, type ThemeConfig } from '@chakra-ui/react'
 
-// 2. Add your color mode config
 const config: ThemeConfig = {
   initialColorMode: 'dark',
   useSystemColorMode: false,
- 
-}
+};
 
-// 3. extend the theme
 const theme = extendTheme({ 
     config,
     styles: {
@@ -18,10 +12,14 @@ const theme = extendTheme({
         body: {
           bg: 'black',
           color: 'white',
+          fontFamily: "'VT323', monospace", // Set VT323 as the default font
         },
       },
     },
-})
-
+    fonts: {
+      heading: "'VT323', monospace", // Optional: Set VT323 for headings
+      body: "'VT323', monospace",    // Optional: Set VT323 for body text
+    },
+});
 
 export default theme;
