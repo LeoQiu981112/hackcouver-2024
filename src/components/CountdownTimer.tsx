@@ -34,10 +34,10 @@ const CountdownTimer = ({ targetDate }) => {
                 <Flex gap={4}>
                     {Object.keys(timeLeft).map((interval) => (
                         <Box key={interval} p={5}>
-                            <Text fontSize="60px" color="white">
+                            <Text fontSize="40px" color="white">
                                 {timeLeft[interval]}
                             </Text>
-                            <Text fontSize="xl" color="gray.200">
+                            <Text fontSize="20" color="gray.200">
                                 {interval}
                             </Text>
                         </Box>

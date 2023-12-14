@@ -1,4 +1,3 @@
-import NavBar from './NavBar';
 import TimelineComponent from "./TimeLineComponent";
 
 import {
@@ -10,14 +9,9 @@ import {
 export default function Timeline() {
     return (
         <>
-        <NavBar />
-        <Flex direction="column" align="center" >
-
             <Heading as='h1' size='2xl' margin='2rem'>Timeline</Heading>
-           
             <TimelineComponent />
 
-        </Flex>
         </>
     )
 
