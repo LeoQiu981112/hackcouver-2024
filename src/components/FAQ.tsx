@@ -1,6 +1,12 @@
-import { Flex } from '@chakra-ui/react';
-import { Heading } from '@chakra-ui/react';
-import { Card, CardBody, } from '@chakra-ui/react'
+import { Flex, Grid } from '@chakra-ui/react';
+import { Heading, Box } from '@chakra-ui/react';
+import {
+    Accordion,
+    AccordionItem,
+    AccordionButton,
+    AccordionPanel,
+    AccordionIcon,
+  } from '@chakra-ui/react'
 
 
 
@@ -10,6 +16,18 @@ export default function FAQ() {
 
 
     const QandA = [
+        {
+            question: "Q: Lorem Ipsum?",
+            answer: LoremIpsum
+        },
+        {
+            question: "Q: Lorem Ipsum?",
+            answer: LoremIpsum
+        },
+        {
+            question: "Q: Lorem Ipsum?",
+            answer: LoremIpsum
+        },
         {
             question: "Q: Lorem Ipsum?",
             answer: LoremIpsum
@@ -31,14 +49,32 @@ export default function FAQ() {
 
             <Heading as='h1' size='2xl' margin='2rem'>FAQ</Heading>
 
-            {QandA.map((item, index) => (
-                <Card padding='1rem' key={index} maxWidth='800px'>
-                    <Heading>{item.question}</Heading>
-                    <CardBody>
-                        {item.answer}
-                    </CardBody>
-                </Card>
-            ))}
+            <Box height='100%' width='100vw' maxWidth='800px' margin='1rem'>
+
+            <Accordion allowMultiple>
+                <Grid templateColumns='2'>
+                    
+
+                {QandA.map((item, index) => (
+                    <AccordionItem key={index} bg='white' textColor='black' rounded={'md'} margin={'2rem'}>
+                        <h2>
+                            <AccordionButton>
+                                <Box as="span" flex='1' textAlign='left'>
+                                    {item.question}
+                                </Box>
+                                <AccordionIcon />
+                            </AccordionButton>
+                        </h2>
+                        <AccordionPanel pb={4} id=''>
+                            {item.answer}
+                        </AccordionPanel>
+                    </AccordionItem>
+                ))}
+
+                </Grid>
+                
+            </Accordion>
+            </Box>
 
         </Flex>
 
