@@ -54,65 +54,31 @@ export default function FAQ() {
 
     return (
         <>
-            <Flex id='Panelists-flex' direction='column' gap={8} align='center'>
+        <Flex id='Panelists-flex' direction='column' gap={8} align='center'>
 
 
                 <Heading as='h1' size='2xl' margin='2rem'>Panelists</Heading>
 
 
                 <Flex wrap='wrap' align='center' justify='center' gap='20'>
-                    {/* Judges */}
-                    <Card padding='1rem'>
-                        <CardHeader>
-                            <Heading>Judges</Heading>
-                        </CardHeader>
-
-                        <CardBody>
-                            <Grid templateColumns='repeat(4, 1fr)' gap='10' margin='8px'>
-                                {Judges.map(() => (
-                                    <GridItem colSpan={1}>
-                                        <Wrap>
-                                            <WrapItem>
-                                                <Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-                                            </WrapItem>
-                                        </Wrap>
-                                    </GridItem>
-                                ))}
-                            </Grid>
-                        </CardBody>
-
-                    </Card>
-
-                    {/* Mentors */}
-                    <Card padding={'1rem'}>
-                        <CardHeader>
-                            <Heading>Mentors</Heading>
-                        </CardHeader>
-
-                        <CardBody>
-                            <Grid templateColumns='repeat(4, 1fr)' gap={10} margin={'8px'}>
-                                {Judges.map(() => (
-                                    <GridItem colSpan={1}>
-                                        <Wrap>
-                                            <WrapItem>
-                                                <Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-                                            </WrapItem>
-                                        </Wrap>
-                                    </GridItem>
-                                ))}
-                            </Grid>
-                        </CardBody>
-                    </Card>
 
 
-                    <Card>
-                        <RoundAvatar />
-                    </Card>
-                    <Card>
-                        <SquareAvatar />
-                    </Card>
+               
+
+
+                    <RoundAvatar />
+                    
+                    <SquareAvatar />
+
+
+
                 </Flex>
-            </Flex>
+
+
+
+
+
+        </Flex>
         </>
 
     )
