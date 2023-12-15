@@ -3,7 +3,10 @@ import * as React from 'react';
 import {
     Flex,
     Box,
+    Center,
 } from "@chakra-ui/react"
+
+import { SkipNavLink, SkipNavContent } from '@chakra-ui/skip-nav'
 
 import Home from "../components/Home";
 import TimeLine from "../components/TimeLine";
@@ -20,33 +23,34 @@ export default function Page() {
     return (
         <>
             <NavBar />
-
             <Flex id='Flex-Page' direction='column' align='center' justify='center'>
                 <Home />
 
-                <Box marginBottom='1rem'>
+                <Box id='timeline' marginBottom='1rem'>
                     <TimeLine />
                 </Box>
 
-                <Box marginBottom='1rem'>
+                <Box id='about-us' marginBottom='1rem'>
                     <About />
+               
                 </Box>
 
-                <Box marginBottom='1rem'>
+                <Box id='sponsors' marginBottom='1rem'>
                     <Sponsors />
                 </Box>
 
-                <Box marginBottom='1rem'>
+                <Box id='panelists' marginBottom='1rem'>
                     <Panelists />
                 </Box>
 
-                <Box marginBottom='1rem'>
+                <Box id='FAQs' marginBottom='1rem'>
                     <FAQ />
                 </Box>
 
-                <Box marginBottom='1rem'>
+                <Box id='contact-us' marginBottom='1rem'>
                     <Contact />
                 </Box>
+                <SkipNavContent/>
 
                 <Box>
                     <Footer />

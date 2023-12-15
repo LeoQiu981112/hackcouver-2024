@@ -1,15 +1,15 @@
 import { 
     Flex,
     Grid,
-    Box,
+
 } from "@chakra-ui/react";
 
 import {
     Text, 
     Image,
-    Divider,
-    AbsoluteCenter
+    Link
 } from "@chakra-ui/react";
+
 
 import Logo from "./Logo";
 import instagram from "../assets/instagram_logo.png";
@@ -20,11 +20,14 @@ import twitter from "../assets/twitter_logo.png";
 export default function Footer(){
     return(
         <>
+       
         <Grid 
             id='Footer-grid'
             w='100vw' 
             bg='white'
             templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }}>
+
+                
 
             {/* Navigation Links */}
             <Flex 
@@ -48,10 +51,10 @@ export default function Footer(){
                     justify='center'  
                     textAlign='left' 
                     textColor='black'>
-                    <Text>About Us</Text>
-                    <Text>Timeline</Text>
-                    <Text>Sponsors</Text>
-                    <Text>FAQs</Text>
+                    <Link href='#about-us'>About Us</Link>
+                    <Link href='#timeline'>Timeline</Link>
+                    <Link href='#sponsors'>Sponsors</Link>
+                    <Link href='#FAQs'>FAQs</Link>
                 </Flex>
             </Flex>
 
@@ -65,25 +68,34 @@ export default function Footer(){
                 align='center'
                 m={8}
                 gap={8}>
-
-                <Image
-                    boxSize='50px'
-                    objectFit='cover'
-                    src={instagram}
-                    alt='instagram logo'
+          
+                <Link href="https://www.instagram.com" isExternal>
+                    <Image
+                        boxSize='50px'
+                        objectFit='cover'
+                        src={instagram}
+                        alt='instagram logo'
+                        fallbackSrc='https://via.placeholder.com/50'
+                        />
+                </Link>
+                <Link href="https://www.linkendin.com" isExternal>
+                    <Image
+                        boxSize='50px'
+                        objectFit='cover'
+                        src={linkendin}
+                        alt='linkendin logo'
+                        fallbackSrc='https://via.placeholder.com/50'
                     />
-                <Image
-                    boxSize='50px'
-                    objectFit='cover'
-                    src={linkendin}
-                    alt='linkendin logo'
-                />
-                <Image
-                    boxSize='50px'
-                    objectFit='cover'
-                    src={twitter}
-                    alt='twitter logo'
-                />
+                </Link>
+                <Link href="https://www.x.com" isExternal>
+                    <Image
+                        boxSize='50px'
+                        objectFit='cover'
+                        src={twitter}
+                        alt='twitter logo'
+                        fallbackSrc='https://via.placeholder.com/50'
+                        />
+                </Link>
                         
             </Flex>
 
@@ -99,8 +111,7 @@ export default function Footer(){
             <Text>Organized by Vancouver.dev</Text>
             <Text>&copy; Vancouver.dev 2024</Text>
         </Flex>
-
-
+      
 
         </>
     )

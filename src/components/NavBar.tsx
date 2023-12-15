@@ -37,35 +37,36 @@ export default function NavBar() {
             };
         }
     }, [lastScrollY, isOpen, onToggle]);
+
     const pages = [
 
         {
             name: 'Home',
-            path: '/',
+            path: '#',
         },
         {
-            name: 'About',
-            path: '/about',
+            name: 'About Us',
+            path: '#about-us',
         },
         {
-            name: 'TimeLine',
-            path: '/timeline',
+            name: 'Timeline',
+            path: '#timeline',
         },
         {
             name: 'Sponsors',
-            path: '/sponsors',
+            path: '#sponsors',
         },
         {
             name: 'Panelists',
-            path: '/panelists',
+            path: '#panelists',
         },
         {
-            name: 'Contact',
-            path: '/contact',
+            name: 'Contact Us',
+            path: '#contact-us',
         },
         {
-            name: 'FAQ',
-            path: '/faq',
+            name: 'FAQs',
+            path: '#FAQs',
         },
 
     ]
@@ -90,7 +91,7 @@ export default function NavBar() {
                 mb={'4rem'}
             >
                 {pages.map((page, index) => (
-                    <Link as={RouterLink} to={page.path} key={index}>
+                    <Link href={page.path} key={index}>
                         {page.name}
                     </Link>
                 ))}
