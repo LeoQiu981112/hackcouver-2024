@@ -13,6 +13,7 @@ import Panelists from "../components/Panelists";
 import Contact from "../components/Contact";
 import FAQ from '../components/FAQ';
 import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 // Now you can use the imported components from the components folder
 export default function Page() {
 
@@ -20,7 +21,7 @@ export default function Page() {
         <>
             <NavBar />
 
-            <Flex direction='column' align='center' justify='center'>
+            <Flex id='Flex-Page' direction='column' align='center' justify='center'>
                 <Home />
 
                 <Box marginBottom='1rem'>
@@ -45,6 +46,10 @@ export default function Page() {
 
                 <Box marginBottom='1rem'>
                     <Contact />
+                </Box>
+
+                <Box>
+                    <Footer />
                 </Box>
 
             </Flex>

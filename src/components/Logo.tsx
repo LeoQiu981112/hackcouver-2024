@@ -1,13 +1,17 @@
 
-import React from 'react';
 import { Text } from '@chakra-ui/react';
 
-const Logo: React.FC = () => {
+interface LogoProps {
+    textColor ?: string;
+    fontSize ?: string;
+    marginBottom ?: string;
+}
+
+export default function Logo({ textColor='white', fontSize='140', marginBottom='12rem'}: LogoProps) {
     return (
-        <Text as="h1" fontSize="140" color="white" mb="12rem" >
-            Hackcou<sup><Text as="span" fontSize="120" fontWeight={"bold"} color="red">{'<'}</Text></sup>er
+        <Text as="h1" fontSize={fontSize} color={textColor} mb={marginBottom} >
+            Hackcou<sup><Text as="span" fontWeight={"bold"} color="red">{'<'}</Text></sup>er
         </Text>
     );
-};
+}
 
-export default Logo;
