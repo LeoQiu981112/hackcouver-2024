@@ -42,7 +42,9 @@ export default function Footer(){
                     textColor='black'
                     align='center'
                     justify='center'>
-                    <Logo textColor={'black'} fontSize={"30px"}  marginBottom={'0'}/>
+                        <Link _hover={{transform: ['scale(1.1)', 'translateX(-10px)'], transition: 'transform .2s ease-in-out'}} href='#'>   
+                            <Logo textColor={'black'} fontSize={"30px"}  marginBottom={'0'}/>
+                        </Link>
                 </Flex>
 
                 <Flex 
@@ -51,10 +53,10 @@ export default function Footer(){
                     justify='center'  
                     textAlign='left' 
                     textColor='black'>
-                    <Link href='#about-us'>About Us</Link>
-                    <Link href='#timeline'>Timeline</Link>
-                    <Link href='#sponsors'>Sponsors</Link>
-                    <Link href='#FAQs'>FAQs</Link>
+                    <Link _hover={{color: 'red', transform: 'translateX(5px)'}} href='#about-us'>About Us</Link>
+                    <Link _hover={{color: 'red', transform: 'translateX(5px)'}} href='#timeline'>Timeline</Link>
+                    <Link _hover={{color: 'red', transform: 'translateX(5px)'}} href='#sponsors'>Sponsors</Link>
+                    <Link _hover={{color: 'red', transform: 'translateX(5px)'}} href='#FAQs'>FAQs</Link>
                 </Flex>
             </Flex>
 
@@ -75,6 +77,7 @@ export default function Footer(){
                         objectFit='cover'
                         src={instagram}
                         alt='instagram logo'
+                        _hover={{transform: 'scale(1.1)', transition: 'transform .2s ease-in-out'}}
                         fallbackSrc='https://via.placeholder.com/50'
                         />
                 </Link>
@@ -84,6 +87,7 @@ export default function Footer(){
                         objectFit='cover'
                         src={linkendin}
                         alt='linkendin logo'
+                        _hover={{transform: 'scale(1.1)', transition: 'transform .2s ease-in-out'}}
                         fallbackSrc='https://via.placeholder.com/50'
                     />
                 </Link>
@@ -93,6 +97,7 @@ export default function Footer(){
                         objectFit='cover'
                         src={twitter}
                         alt='twitter logo'
+                        _hover={{transform: 'scale(1.1)', transition: 'transform .2s ease-in-out'}}
                         fallbackSrc='https://via.placeholder.com/50'
                         />
                 </Link>
@@ -101,9 +106,7 @@ export default function Footer(){
 
            
         
-        
-        
-        
+    
         </Grid>
 
         {/* Copyright */}

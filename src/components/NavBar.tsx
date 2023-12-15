@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Link, useDisclosure, SlideFade, Flex } from '@chakra-ui/react';
-import { Link as RouterLink } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useDisclosure, SlideFade, Flex } from '@chakra-ui/react';
 
 export default function NavBar() { 
     const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: true });
