@@ -19,7 +19,7 @@ const MatrixRainingCode = () => {
             return grayColors[Math.floor(Math.random() * grayColors.length)];
         };
 
-        
+
         // create function to generate random black color
         const getRandomNeonColor = () => {
             const neonColors = ['#cb3301', '#ff0066', '#ff6666', '#feff99', '#ffff67', '#ccff66', '#99fe00', '#fe99ff', '#ff99cb', '#fe349a', '#cc33cc', '#cb33ff', '#6633cc', '#3366ff', '#33ccff', '#99ffff', '#33cccc', '#339999', '#00ffcc', '#00cc99', '#66ffcc', '#66ff66', '#66cc66', '#00ff99', '#33ff99', '#33cc33', '#66ff33', '#66ff00', '#66cc00', '#00cc33', '#00ff00', '#33ff00', '#33cc00', '#339933', '#669933', '#99cc33', '#ccff33', '#ffff00', '#ffcc00', '#ff9900', '#ff6600', '#cc6633', '#996633', '#663300', '#ff3300', '#ff0000', '#cc0000', '#990033', '#330000', '#660000'];
@@ -51,14 +51,14 @@ const MatrixRainingCode = () => {
 
         const draw = () => {
             ctx.clearRect(0, 0, width, height); // Clear the entire canvas
-        
+
             drops.forEach(drop => {
                 ctx.fillStyle = drop.color; // Set the fillStyle to the character's color
                 ctx.font = `${drop.fontSize}px VT323, monospace`; // Use VT323 font
-                ctx.fillText(drop.char, drop.x, drop.y);                ctx.fillText(drop.char, drop.x, drop.y);
-        
+                ctx.fillText(drop.char, drop.x, drop.y); ctx.fillText(drop.char, drop.x, drop.y);
+
                 drop.y += drop.speed; // Move the drop at its speed
-        
+
                 if (drop.y > height) {
                     drop.x = Math.random() * width;
                     drop.color = getRandomColor();
@@ -68,7 +68,7 @@ const MatrixRainingCode = () => {
                 }
             });
         };
-        
+
         const animate = () => {
             draw();
             requestAnimationFrame(animate);

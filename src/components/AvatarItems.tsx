@@ -18,14 +18,7 @@ export function RoundAvatar(){
                     src="https://bit.ly/dan-abramov" 
                     size='xl' 
                     marginBottom='1rem'/>
-                <Box
-                    bg='#00E0D4'
-                    w={16}
-                    h={200}
-                    top={0}
-                    left={2}
-                    rounded={'full'}
-                    position={'absolute'}/>
+
 
                 <Avatar 
                     name="Dan Abrahmov" 

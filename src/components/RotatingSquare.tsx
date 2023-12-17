@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { Box } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 
 const RotatingSquare: React.FC = () => {
     const shadowRef = useRef<HTMLDivElement>(null);
@@ -44,7 +44,7 @@ const RotatingSquare: React.FC = () => {
             borderRadius="20px"
             zIndex={-1} // Ensure the box is behind other content if needed
         >
-            {/* Content */}
+            <Text zIndex={5} color="yellow">ALOHA</Text>
         </Box>
     );
 };
