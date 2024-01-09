@@ -1,25 +1,26 @@
-import { extendTheme, type ThemeConfig } from '@chakra-ui/react'
+import { Button, extendTheme, type ThemeConfig } from '@chakra-ui/react'
 
 const config: ThemeConfig = {
   initialColorMode: 'dark',
   useSystemColorMode: false,
 };
 
-const theme = extendTheme({ 
-    config,
-    styles: {
-      global: {
-        body: {
-          bg: 'black',
-          color: 'white',
-          fontFamily: "'VT323', monospace", // Set VT323 as the default font
-        },
+const theme = extendTheme({
+  config,
+  styles: {
+    global: {
+      body: {
+        bg: '#2F2440',
+        color: '#FFCBA4',
+        fontFamily: "'Play', monospace", // Set VT323 as the default font
       },
     },
-    fonts: {
-      heading: "'VT323', monospace", // Optional: Set VT323 for headings
-      body: "'VT323', monospace",    // Optional: Set VT323 for body text
-    },
+  },
+  fonts: {
+    heading: "'Play', monospace", // Optional: Set VT323 for headings
+    body: "'Play', monospace",    // Optional: Set VT323 for body text
+  },
+
 });
 
 export default theme;

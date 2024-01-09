@@ -10,10 +10,11 @@ const steps = [
 
 function TimelineComponent() {
     return (
-        <Grid templateColumns="repeat(2, 1fr)" gap={6} p={4} alignItems="center">
+        <Grid templateColumns="repeat(2, 1fr)" gap={2} p={2} alignItems="center"
+        >
             {steps.map((step, index) => (
                 <React.Fragment key={index}>
-                    <GridItem>
+                    <GridItem justifySelf="end" pr={20}>
                         <RotatingSquare />
                     </GridItem>
 

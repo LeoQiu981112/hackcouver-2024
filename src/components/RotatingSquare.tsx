@@ -16,8 +16,8 @@ const RotatingSquare: React.FC = () => {
             // Increment the background position
             position = (position + 1) % 400;
             shadowElement.style.background = `white`;
-            shadowElement.style.backgroundSize = '400% 400%';
-            shadowElement.style.backgroundPosition = `${position}% 50%`;
+            shadowElement.style.backgroundSize = '200% 200%';
+            shadowElement.style.backgroundPosition = `${position}% 30%`;
 
             // Continuous rotation
             rotation += 1;
@@ -35,17 +35,18 @@ const RotatingSquare: React.FC = () => {
     });
 
     return (
-        <Box
-            ref={shadowRef}
-            position="relative"
-            margin="100px auto"
-            width="80px"
-            height="80px"
-            borderRadius="20px"
-            zIndex={-1} // Ensure the box is behind other content if needed
-        >
-            <Text zIndex={5} color="yellow">ALOHA</Text>
-        </Box>
+        <>
+            <Box
+                ref={shadowRef}
+                position="relative"
+                margin="40px auto"
+                width="1"
+                height="15"
+                borderRadius="20px"
+                zIndex={-1} // Ensure the box is behind other content if needed
+            >
+            </Box>
+        </>
     );
 };
 

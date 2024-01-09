@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useDisclosure, SlideFade, Flex } from '@chakra-ui/react';
 
-export default function NavBar() { 
+export default function NavBar() {
     const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: true });
     const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -9,7 +9,7 @@ export default function NavBar() {
         if (typeof window !== 'undefined') {
             // Calculate the current scroll position
             const currentScrollY = window.scrollY;
-    
+
             if (currentScrollY < lastScrollY) {
                 // Scrolling up
                 if (!isOpen) {
@@ -21,12 +21,12 @@ export default function NavBar() {
                     onToggle(); // Hide navbar if it's open
                 }
             }
-    
+
             // Update the last scroll position
             setLastScrollY(currentScrollY);
         }
     };
-    
+
     useEffect(() => {
         if (typeof window !== 'undefined') {
             window.addEventListener('scroll', controlNavbar);
@@ -47,10 +47,10 @@ export default function NavBar() {
             name: 'About Us',
             path: '#about-us',
         },
-        {
-            name: 'Timeline',
-            path: '#timeline',
-        },
+        // {
+        //     name: 'Timeline',
+        //     path: '#timeline',
+        // },
         {
             name: 'Sponsors',
             path: '#sponsors',
@@ -64,7 +64,7 @@ export default function NavBar() {
             path: '#contact-us',
         },
         {
-            name: 'FAQs',
+            name: 'FAQ',
             path: '#FAQs',
         },
 
@@ -74,23 +74,22 @@ export default function NavBar() {
         <SlideFade in={isOpen} offsetY="20px">
             <Flex
                 as="nav"
-                position="fixed" // Set to fixed
-                top={0}         // Position at the top of the viewport
+                position="fixed"
+                top={0}
                 left={0}
                 right={0}
-                zIndex={1}      // Ensure it's above other content
+                zIndex={1}
                 align="center"
                 justify="space-between"
-                wrap="wrap"
-                padding="1rem"
-                color="white"
-                marginX='2rem'
+                paddingY="1.5rem" // Increased padding on the Y axis for a taller navbar
+                paddingX="1rem"   // X axis padding can remain the same
+                bg="#2F2440"
+                width="100vw"
                 opacity={0.9}
-                fontSize={'1.5rem'}
-                mb={'4rem'}
+                fontSize="1.2rem" // Smaller font size for the text
             >
                 {pages.map((page, index) => (
-                    <Link href={page.path} key={index}>
+                    <Link href={page.path} key={index} _hover={{ textDecoration: 'none' }}>
                         {page.name}
                     </Link>
                 ))}

@@ -7,7 +7,7 @@ import { Wrap, WrapItem } from "@chakra-ui/react";
 import { RoundAvatar, SquareAvatar } from "./AvatarItems";
 
 
-export default function Panelists() {
+export default function JudgeMentor() {
 
     const Judges = [
         {
@@ -57,7 +57,7 @@ export default function Panelists() {
             <Flex id='Panelists-flex' direction='column' gap={8} align='center'>
 
 
-                <Heading as='h1' size='2xl' margin='2rem'>Panelists</Heading>
+                <Heading as='h1' size='2xl' margin='2rem'>Judges & Mentors </Heading>
 
 
                 <Flex wrap='wrap' align='center' justify='center' gap='20'>

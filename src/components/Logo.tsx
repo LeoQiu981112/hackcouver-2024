@@ -7,9 +7,9 @@ interface LogoProps {
     marginBottom?: string;
 }
 
-export default function Logo({ textColor = 'white', fontSize = '140', marginBottom = '6rem' }: LogoProps) {
+export default function Logo({ fontSize = '128' }: LogoProps) {
     return (
-        <Text as="h1" fontSize={fontSize} color={textColor} mb={marginBottom} >
+        <Text as="h1" fontSize={fontSize} fontWeight={"bold"}  >
             Hackcou<sup><Text as="span" fontWeight={"bold"} color="red">{'<'}</Text></sup>er
         </Text>
     );
