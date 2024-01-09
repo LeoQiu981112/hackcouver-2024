@@ -84,7 +84,7 @@ export default function NavBar() {
                 paddingY="1.5rem" // Increased padding on the Y axis for a taller navbar
                 paddingX="1rem"   // X axis padding can remain the same
                 bg="#2F2440"
-                width="100vw"
+                width="w=100%"
                 opacity={0.9}
                 fontSize="1.2rem" // Smaller font size for the text
             >
@@ -94,6 +94,6 @@ export default function NavBar() {
                     </Link>
                 ))}
             </Flex>
-        </SlideFade>
+        </SlideFade >
     );
 }

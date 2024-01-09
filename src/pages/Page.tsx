@@ -20,27 +20,29 @@ export default function Page() {
 
     return (
         <>
-            <NavBar />
 
-            <Flex id='Flex-Page' direction='column' align='center' justify='center'>
+            <Flex id='Flex-Page' direction='column' align='center' justify='center' wrap='wrap' w="100%">
+                <NavBar />
 
-                <Home />
+                <Box id='home' w="100%" marginBottom='1rem'>
+                    <Home />
+                </Box>
+
+                <Box id='about-us' minH="100vh" w="100wh" marginBottom='1rem'>
+                    <About />
+                </Box>
 
                 {/* <Box id='timeline' marginBottom='1rem'>
                     <TimeLine />
                 </Box> */}
 
-                <Box id='about-us' marginBottom='1rem'>
-                    <About />
-
-                </Box>
                 <Box id='panelists' marginBottom='1rem'>
                     <Panelists />
                 </Box>
-
+                {/* 
                 <Box id='judgement' marginBottom='1rem'>
                     <JudgeMentor />
-                </Box>
+                </Box> */}
 
                 <Box id='sponsors' marginBottom='1rem'>
                     <Sponsors />
@@ -53,7 +55,6 @@ export default function Page() {
                 <Box id='contact-us' marginBottom='1rem'>
                     <Contact />
                 </Box>
-
                 <Box>
                     <Footer />
                 </Box>

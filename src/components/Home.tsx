@@ -8,10 +8,12 @@ const Home = () => {
 
     return (
         <>
-            <Box id="homebox" w="100vw" h="140vh"
+            <Box id="homebox" w="100%" h="130vh"
                 background={`url(${city})`}
-                backgroundSize="cover" backgroundPosition="center" opacity={0.20} />
-            <Flex direction="column" position="absolute" top={40} pt={100} mb={70} gap={20} align="center">
+                backgroundSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat" opacity={0.20} overflow="hidden">
+
+            </Box>
+            <Flex direction="column" position="absolute" top="0" align="center" w="100%" h="100vh" gap={10} justifyContent="center">
                 <Logo />
                 <Flex direction="row" gap={100}>
                     <Text fontSize="35" fontWeight="bold">Vancouver Convention Center</Text>

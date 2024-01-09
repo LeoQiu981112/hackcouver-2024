@@ -4,7 +4,7 @@ import { Card } from "@chakra-ui/react";
 
 import { Avatar } from '@chakra-ui/react'
 import { Wrap, WrapItem } from "@chakra-ui/react";
-import { RoundAvatar, SquareAvatar } from "./AvatarItems";
+import { RoundAvatar } from "./AvatarItems";
 
 
 export default function JudgeMentor() {
@@ -62,21 +62,9 @@ export default function JudgeMentor() {
 
                 <Flex wrap='wrap' align='center' justify='center' gap='20'>
 
-
-
-
-
                     <RoundAvatar />
 
-                    <SquareAvatar />
-
-
-
                 </Flex>
-
-
-
-
 
             </Flex>
         </>
