@@ -1,29 +1,23 @@
-import {
-    Avatar,
-
-} from "@chakra-ui/react"
-import { Flex } from "@chakra-ui/react"
-import { Image, Box, Text, VStack } from "@chakra-ui/react"
+import { Avatar, Box, Text, VStack } from "@chakra-ui/react";
 
 interface RoundAvatarProps {
     name: string;
     src: string;
-    title: string | JSX.Element; // Since we're passing a JSX element, we'll specify it here
+    title: string | JSX.Element;
+    avatarSize?: "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl"; // Add avatarSize prop for responsiveness
+    textSize?: string; // Add textSize prop for responsiveness
 }
 
-
-
-const RoundAvatar: React.FC<RoundAvatarProps> = ({ name, src, title }) => {
-    // Define a fixed height for the name and title containers
+const RoundAvatar: React.FC<RoundAvatarProps> = ({ name, src, title, avatarSize = "2xl", textSize = "xl" }) => {
     const fixedHeight = '60px'; // Adjust as needed
 
     return (
-        <VStack spacing="4" minW="200px" align="center"> {/* Align items to start */}
+        <VStack minW="200px" align="center">
             <Box position={'relative'}>
                 <Avatar
                     name={name}
                     src={src}
-                    size='2xl'
+                    size={avatarSize} // Use the avatarSize prop
                     showBorder={true}
                     border='4px solid white'
                 />
@@ -37,7 +31,7 @@ const RoundAvatar: React.FC<RoundAvatarProps> = ({ name, src, title }) => {
                 />
             </Box>
             <Box textAlign="center" height={fixedHeight}>
-                <Text fontSize="xl" fontWeight="bold" noOfLines={1} color={"#FFD8EA"}>{name}</Text> {/* Fixed height and truncate if necessary */}
+                <Text fontSize={textSize} fontWeight="bold" noOfLines={1} color={"#FFD8EA"}>{name}</Text> {/* Use the textSize prop */}
                 {title}
             </Box>
         </VStack>
