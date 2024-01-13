@@ -14,7 +14,7 @@ export default function Sponsors() {
                         />
                     ))}
                 </Grid>
-                <CustomButton text="SPONSOR US" />
+                <CustomButton text="SPONSOR US" url="https://www.google.ca" />
             </Flex>
         </>
     );

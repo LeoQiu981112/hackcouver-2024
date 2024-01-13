@@ -61,7 +61,7 @@ const Home = () => {
 
                     {/* Home Page Button */}
                     <Box>
-                        <CustomButton text="Register Now" />
+                        <CustomButton text="Register Now" url="https://tally.so/r/wbdOL7" />
                     </Box>
                 </Flex>
             </Flex>

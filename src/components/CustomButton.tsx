@@ -3,9 +3,10 @@ import { Button as ChakraButton } from '@chakra-ui/react';
 
 interface ButtonProps {
     text: string;
+    url: string;
 }
 
-const CustomButton: React.FC<ButtonProps> = ({ text }) => {
+const CustomButton: React.FC<ButtonProps> = ({ text, url }) => {
     return (
         <ChakraButton
             color="#FFCBA4"
@@ -14,7 +15,7 @@ const CustomButton: React.FC<ButtonProps> = ({ text }) => {
             w="250px"
             h="50px"
             as="a"
-            href="https://tally.so/r/wbdOL7"
+            href={url}
             outlineColor={"white"}
             css={{
                 animation: 'breathing 2s ease-in-out infinite',
