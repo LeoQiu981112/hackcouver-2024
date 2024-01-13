@@ -21,10 +21,10 @@ export default function Page() {
     return (
         <>
 
-            <Flex id='Flex-Page' direction='column'>
+            <Flex id='Flex-Page' direction='column' zIndex={0} >
                 <NavBar />
 
-                <Box id='home'marginBottom='10rem'>
+                <Box id='home' marginBottom='10rem'>
                     <Home />
                 </Box>
 
