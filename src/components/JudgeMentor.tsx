@@ -59,9 +59,9 @@ export default function JudgeMentor() {
                 <Heading as='h1' size='2xl' margin='2rem'>Judges & Mentors </Heading>
 
 
-                <Flex wrap='wrap' align='center' justify='center' gap='20'>
+                <Flex wrap='wrap' align='center' justify='center'>
 
-                    <Grid templateColumns="repeat(2, 1fr)" gap={6} p={10} >
+                    <Grid templateColumns="repeat(2, 1fr)" >
                         {[...Array(6)].map((_, index) => (
                             <GridItem key={index}>
                                 <Judge name="Alex" title="Amazon Software Engineer" src="https://bit.ly/dan-abramov" />

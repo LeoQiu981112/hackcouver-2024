@@ -13,7 +13,7 @@ interface JudgeProps {
 }
 
 const Judge: React.FC<JudgeProps> = ({ name, src, title }) =>
-    <Flex align="center" p={2} borderRadius="lg">
+    <Flex id="Judge" align="center" p={2} borderRadius="lg" >
         <Avatar
             src={src}
             size="xl"
