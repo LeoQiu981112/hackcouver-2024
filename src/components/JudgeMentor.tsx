@@ -1,9 +1,6 @@
-import { Flex, Grid, GridItem, CardBody, CardHeader } from "@chakra-ui/react";
+import { Flex, Grid, GridItem } from "@chakra-ui/react";
 import { Heading } from "@chakra-ui/react";
-import { Card } from "@chakra-ui/react";
 
-import { Avatar } from '@chakra-ui/react'
-import { Wrap, WrapItem } from "@chakra-ui/react";
 import Judge from './Judge';
 
 export default function JudgeMentor() {

@@ -6,7 +6,7 @@ import {
 
 
 import Home from "../components/Home";
-import TimeLine from "../components/TimeLine";
+// import TimeLine from "../components/TimeLine";
 import About from "../components/About";
 import Sponsors from "../components/Sponsors";
 import Panelists from "../components/Panelists";

@@ -6,7 +6,7 @@ import {
 
 } from "@chakra-ui/react";
 import CustomCard from "./CustomCard";
-import CustomButton from "./Button";
+import CustomButton from "./CustomButton";
 
 export default function Sponsors() {
 

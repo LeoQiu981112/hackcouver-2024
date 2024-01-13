@@ -1,6 +1,6 @@
 import {
-    Avatar, Box, Text, VStack,
-    Flex, Circle
+    Avatar, Box, Text,
+    Flex
 } from "@chakra-ui/react";
 
 

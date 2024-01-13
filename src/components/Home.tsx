@@ -1,27 +1,75 @@
+import { useBreakpointValue } from '@chakra-ui/react'
 import {
-    Box, Heading, Flex, Link, Text, Button
+    Box, Flex, Text,
 } from "@chakra-ui/react"
 import Logo from "./Logo"
 import city from "../assets/city.png"
-import CustomButton from "./Button";
+import CustomButton from "./CustomButton";
+
 const Home = () => {
+
+    const LogoTextSize = useBreakpointValue(
+        {
+          base: '4rem',
+          md: '8rem',
+        },
+    )
 
     return (
         <>
-            <Box id="homebox" w="100%" h="130vh"
+
+        <Flex 
+            id="Home-Page-Flex"
+            justify={"center"}
+            >
+            {/* Home Page Background */}
+            <Box  
+                w="100%" h="100vh"
+                position="relative"
                 background={`url(${city})`}
-                backgroundSize="cover" backgroundPosition="center" backgroundRepeat="no-repeat" opacity={0.20} overflow="hidden">
-
+                backgroundSize="cover" 
+                backgroundPosition="center" 
+                backgroundRepeat="no-repeat" 
+                opacity={0.20} 
+                overflow="hidden">
             </Box>
-            <Flex direction="column" position="absolute" top="0" align="center" w="100%" h="100vh" gap={10} justifyContent="center">
-                <Logo />
-                <Flex direction="row" gap={100}>
-                    <Text fontSize="35" fontWeight="bold">Vancouver Convention Center</Text>
-                    <Text fontSize="35" fontWeight="bold">24 Mar 01 - 24 Mar 14</Text>
-                </Flex>
-                <CustomButton text="Register Now" />
 
-            </Flex >
+            {/* Home Page Logo */}
+            <Flex
+                id="Home-Text-Flex"
+                position={"absolute"}
+                direction={"column"}
+                textAlign={'center'}
+                gap={10}
+                px={10}
+                pt={80}>
+                
+                <Box>
+                    <Logo fontSize={LogoTextSize}/>
+                </Box>
+
+                {/* Home Page Info */}
+                <Flex
+                    id="Home-Info-Flex"
+                    direction={{base: "column", md: "row"}}
+                    align={'center'}
+                    gap={{base: 10, md: 200}}
+                    >
+                    <Text fontSize={{base: '1.5rem', md: '2rem'}} fontWeight="bold">Vancouver Convention Center</Text>
+                    <Text fontSize={{base: '1.5rem', md: '2rem'}} fontWeight="bold">24 Mar 01 - 24 Mar 14</Text>                
+                </Flex>
+
+                {/* Home Page Button */}
+                <Box>
+                    <CustomButton text="Register Now" />
+                </Box>
+            </Flex>
+        </Flex>
+
+
+
+
+
         </>
     );
 };
