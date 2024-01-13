@@ -5,7 +5,7 @@ import {
     Image,
     Heading,
 } from "@chakra-ui/react";
-import ide_image from '../assets/ide.png';
+import ide_image from '../assets/terminal.png';
 import teamwork from '../assets/teamwork.png';
 
 export default function About() {
