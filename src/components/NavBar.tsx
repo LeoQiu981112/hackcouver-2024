@@ -74,17 +74,11 @@ export default function NavBar() {
         <SlideFade in={isOpen} offsetY="20px">
             <Flex
                 as="nav"
-                position="fixed"
-                top={0}
-                left={0}
-                right={0}
-                zIndex={1}
+               
                 align="center"
                 justify="space-between"
-                paddingY="1.5rem" // Increased padding on the Y axis for a taller navbar
-                paddingX="1rem"   // X axis padding can remain the same
                 bg="#2F2440"
-                width="w=100%"
+               
                 opacity={0.9}
                 fontSize="1.2rem" // Smaller font size for the text
             >
