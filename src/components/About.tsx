@@ -36,7 +36,7 @@ export default function About() {
 
             </Flex>
 
-            <Heading as='h1' size='2xl' margin='2rem'>What you will gain!</Heading>
+            <Heading as='h1' size='2xl' paddingTop={40} margin='2rem'>What you will gain!</Heading>
             <Image src={ide_image} />
 
 

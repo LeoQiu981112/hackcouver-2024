@@ -24,11 +24,11 @@ export default function Page() {
             <Flex id='Flex-Page' direction='column' align='center' justify='center' wrap='wrap' w="100%">
                 <NavBar />
 
-                <Box id='home' w="100%" marginBottom='1rem'>
+                <Box id='home' w="100%" marginBottom='5rem'>
                     <Home />
                 </Box>
 
-                <Box id='about-us' minH="100vh" w="100wh" marginBottom='1rem'>
+                <Box id='about-us' minH="100vh" w="100wh" marginBottom='10rem'>
                     <About />
                 </Box>
 
@@ -36,13 +36,13 @@ export default function Page() {
                     <TimeLine />
                 </Box> */}
 
-                <Box id='panelists' marginBottom='1rem'>
+                <Box id='panelists' marginBottom='15rem'>
                     <Panelists />
                 </Box>
-                {/* 
+
                 <Box id='judgement' marginBottom='1rem'>
                     <JudgeMentor />
-                </Box> */}
+                </Box>
 
                 <Box id='sponsors' marginBottom='1rem'>
                     <Sponsors />

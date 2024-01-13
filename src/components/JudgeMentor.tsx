@@ -4,8 +4,7 @@ import { Card } from "@chakra-ui/react";
 
 import { Avatar } from '@chakra-ui/react'
 import { Wrap, WrapItem } from "@chakra-ui/react";
-import { RoundAvatar } from "./AvatarItems";
-
+import Judge from './Judge';
 
 export default function JudgeMentor() {
 
@@ -62,11 +61,17 @@ export default function JudgeMentor() {
 
                 <Flex wrap='wrap' align='center' justify='center' gap='20'>
 
-                    <RoundAvatar />
+                    <Grid templateColumns="repeat(2, 1fr)" gap={6} p={10} >
+                        {[...Array(6)].map((_, index) => (
+                            <GridItem key={index}>
+                                <Judge name="Alex" title="Amazon Software Engineer" src="https://bit.ly/dan-abramov" />
+                            </GridItem>
+                        ))}
+                    </Grid>
 
                 </Flex>
 
-            </Flex>
+            </Flex >
         </>
 
     )

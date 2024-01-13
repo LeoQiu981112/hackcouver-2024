@@ -11,6 +11,8 @@ interface RoundAvatarProps {
     title: string | JSX.Element; // Since we're passing a JSX element, we'll specify it here
 }
 
+
+
 const RoundAvatar: React.FC<RoundAvatarProps> = ({ name, src, title }) => {
     // Define a fixed height for the name and title containers
     const fixedHeight = '60px'; // Adjust as needed
