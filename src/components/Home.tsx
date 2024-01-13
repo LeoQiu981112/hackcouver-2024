@@ -24,7 +24,7 @@ const Home = () => {
             >
             {/* Home Page Background */}
             <Box  
-                w="100%" h="100vh"
+                w="100%" h="130vh"
                 position="relative"
                 background={`url(${city})`}
                 backgroundSize="cover" 
@@ -40,8 +40,8 @@ const Home = () => {
                 position={"absolute"}
                 direction={"column"}
                 textAlign={'center'}
-                gap={10}
-                px={10}
+                gap={20}
+                m={5}
                 pt={80}>
                 
                 <Box>
@@ -53,15 +53,16 @@ const Home = () => {
                     id="Home-Info-Flex"
                     direction={{base: "column", md: "row"}}
                     align={'center'}
-                    gap={{base: 10, md: 200}}
+                    gap={{base:2, md: 150}}
+                    mb={10}
                     >
-                    <Text fontSize={{base: '1.5rem', md: '2rem'}} fontWeight="bold">Vancouver Convention Center</Text>
-                    <Text fontSize={{base: '1.5rem', md: '2rem'}} fontWeight="bold">24 Mar 01 - 24 Mar 14</Text>                
+                    <Text fontSize={{base: '32px', md: '2rem'}} fontWeight="bold">Vancouver Convention Center</Text>
+                    <Text fontSize={{base: '24px', md: '2rem'}} fontWeight="bold">March 01 - March 14</Text>                
                 </Flex>
 
                 {/* Home Page Button */}
                 <Box>
-                    <CustomButton text="Register Now" />
+                    <CustomButton text="REGISTER NOW" />
                 </Box>
             </Flex>
         </Flex>

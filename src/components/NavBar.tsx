@@ -1,9 +1,33 @@
 import { useState, useEffect } from 'react';
-import { Link, useDisclosure, SlideFade, Flex } from '@chakra-ui/react';
+import { IconButton } from '@chakra-ui/react'
+import { Link, useDisclosure, SlideFade, Flex, Box } from '@chakra-ui/react';
+import { ExternalLinkIcon, AddIcon, HamburgerIcon } from '@chakra-ui/icons'
+import {
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
+  } from '@chakra-ui/react'
+import Logo from './Logo';
+import { useBreakpointValue } from '@chakra-ui/react'
+
+interface Page {
+    name: string;
+    path: string;
+}
 
 export default function NavBar() {
     const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: true });
     const [lastScrollY, setLastScrollY] = useState(0);
+
+
+    
+    const NavBreakPoint = useBreakpointValue(
+        {
+          base: 'base',
+          md: '8rem',
+        },
+    )
 
     const controlNavbar = () => {
         if (typeof window !== 'undefined') {
@@ -72,22 +96,92 @@ export default function NavBar() {
 
     return (
         <SlideFade in={isOpen} offsetY="20px">
-            <Flex
-                as="nav"
-               
-                align="center"
-                justify="space-between"
-                bg="#2F2440"
-               
-                opacity={0.9}
-                fontSize="1.2rem" // Smaller font size for the text
-            >
-                {pages.map((page, index) => (
-                    <Link href={page.path} key={index} _hover={{ textDecoration: 'none' }}>
-                        {page.name}
-                    </Link>
-                ))}
-            </Flex>
+            {(NavBreakPoint=="base") ? <NavBarMobile pages={pages}/> : <NavBarDesktop pages={pages}/> } 
         </SlideFade >
     );
 }
+
+
+function NavBarDesktop({ pages }: { pages: Page[] }) {
+
+    return (
+        <>
+        <Flex
+                id="NavBar-Flex"
+                direction="row"
+                justify="center"
+                mx={10}
+                my={5}
+                gap={40}
+                >
+                <Box>
+                    <Logo fontSize="1.5rem" />
+                </Box>
+                <Flex
+                    bg="#2F2440"
+                    opacity={0.9}
+                    gap={{ sm: 5, md: 10 }}
+                    fontSize="1rem" // Smaller font size for the text
+                    >
+                    {pages.map((page, index) => (
+                        <Link href={page.path} key={index} _hover={{ textDecoration: 'none' }}>
+                            {page.name}
+                        </Link>
+                    ))}
+                </Flex>
+            </Flex>
+        </>
+    );
+}
+
+function NavBarMobile({pages }: { pages: Page[] }) {
+
+    return (
+        <>
+            
+                <Box
+                    top={0}
+                    left={0}
+                    position="fixed"
+                    >
+
+                
+                    <Menu
+                        id="NavBar-Menu"
+                        >
+                        
+                    <MenuButton
+                        as={IconButton}
+                        aria-label='Options'
+                        icon={<HamburgerIcon boxSize={5} />}
+                        w={'3rem'}
+                        h={'3rem'}
+                        bg={'white'}
+                        />
+                    <MenuList>
+                        <MenuItem icon={<AddIcon />} command='⌘T'>
+                        New Tab
+                        </MenuItem>
+                        <MenuItem icon={<ExternalLinkIcon />} command='⌘N'>
+                        New Window
+                        </MenuItem>
+                    </MenuList>
+                    </Menu>
+                </Box>
+
+                <Flex
+                    id="NavBar-Logo-Flex"
+                    direction="row"
+                    justify="center"
+                    align={'center'}
+                    my={3}
+                    >
+                    <Logo fontSize="1.5rem" />
+                </Flex>
+
+           
+        </>
+    );
+}
+
+
