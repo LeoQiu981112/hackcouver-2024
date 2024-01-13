@@ -21,14 +21,14 @@ export default function Page() {
     return (
         <>
 
-            <Flex id='Flex-Page' direction='column' align='center' justify='center' wrap='wrap' w="100%">
+            <Flex id='Flex-Page' direction='column'>
                 <NavBar />
 
-                <Box id='home' w="100%" marginBottom='5rem'>
+                <Box id='home'marginBottom='5rem'>
                     <Home />
                 </Box>
 
-                <Box id='about-us' minH="100vh" w="100wh" marginBottom='10rem'>
+                <Box id='about-us' marginBottom='10rem'>
                     <About />
                 </Box>
 
@@ -55,7 +55,7 @@ export default function Page() {
                 <Box id='contact-us' marginBottom='1rem'>
                     <Contact />
                 </Box>
-                <Box>
+                <Box bg={'#B94949'}>
                     <Footer />
                 </Box>
 
