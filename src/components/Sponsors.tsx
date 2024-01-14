@@ -1,8 +1,17 @@
-import { Flex, Heading, Grid } from "@chakra-ui/react";
+import { Flex, Heading, Grid, Box } from "@chakra-ui/react";
 import CustomCard from "./CustomCard";
 import CustomButton from "./CustomButton";
+import { useBreakpointValue } from '@chakra-ui/react'
 
 export default function Sponsors() {
+
+    const BreakPoint = useBreakpointValue(
+        {
+          base: 'base',
+          md: '48rem',
+        },
+    )
+
     return (
         <>
             <Flex id='Sponsors-flex' direction={'column'} align={'center'} justify={'center'} color="white" p={32}>
@@ -14,7 +23,13 @@ export default function Sponsors() {
                         />
                     ))}
                 </Grid>
-                <CustomButton text="SPONSOR US" url="https://www.google.ca" />
+                 {/* Sponsor Button */}
+                    <Box mt={10}>
+                        {(BreakPoint=="base") ? 
+                        <CustomButton text="SPONSOR US" url="https://www.google.ca" width='150px' height='40px' fontSize='16' />
+                        : 
+                        <CustomButton text="SPONSOR US" url="https://www.google.ca" />} 
+                    </Box>
             </Flex>
         </>
     );

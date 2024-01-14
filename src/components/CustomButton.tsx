@@ -4,16 +4,19 @@ import { Button as ChakraButton } from '@chakra-ui/react';
 interface ButtonProps {
     text: string;
     url: string;
+    width?: string;
+    height?: string;
+    fontSize?: string;
 }
 
-const CustomButton: React.FC<ButtonProps> = ({ text, url }) => {
+const CustomButton: React.FC<ButtonProps> = ({ text, url, width='250px', height='50px', fontSize='25' }) => {
     return (
         <ChakraButton
             color="#FFCBA4"
             colorScheme='red'
-            fontSize="25"
-            w="250px"
-            h="50px"
+            fontSize={fontSize}
+            w={width}
+            h={height}
             as="a"
             href={url}
             outlineColor={"white"}

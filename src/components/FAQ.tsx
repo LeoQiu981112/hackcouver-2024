@@ -74,7 +74,8 @@ export default function FAQ() {
                 id='FAQ-grid' 
                 gap={4}
                 templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} 
-                width={{base: '80vw', md: '800px'}}>
+                mx={'auto'}
+                width={{base: '80vw', md: '1/2'}}>
 
 
                     <Box mb='1rem'>

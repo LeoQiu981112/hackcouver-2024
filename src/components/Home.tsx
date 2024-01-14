@@ -1,10 +1,11 @@
-import { useBreakpointValue } from '@chakra-ui/react'
 import {
     Box, Flex, Text,
 } from "@chakra-ui/react"
 import Logo from "./Logo"
 import city from "../assets/city.png"
 import CustomButton from "./CustomButton";
+import { useBreakpointValue } from '@chakra-ui/react'
+
 
 const Home = () => {
 
@@ -12,6 +13,13 @@ const Home = () => {
         {
             base: '3rem',
             md: '8rem',
+        },
+    )
+
+    const HomeBreakPoint = useBreakpointValue(
+        {
+          base: 'base',
+          md: '48rem',
         },
     )
 
@@ -24,7 +32,7 @@ const Home = () => {
             >
                 {/* Home Page Background */}
                 <Box
-                    w="100%" h="130vh"
+                    w="100%" h="100vh"
                     position="relative"
                     background={`url(${city})`}
                     backgroundSize="cover"
@@ -40,9 +48,9 @@ const Home = () => {
                     position={"absolute"}
                     direction={"column"}
                     textAlign={'center'}
-                    gap={10}
+                    gap={{ base: '10', md: '20' }}
                     px={10}
-                    pt={80}>
+                    pt={{ base: '12rem', md: '24rem' }}>
 
                     <Box>
                         <Logo fontSize={LogoTextSize} />
@@ -60,8 +68,11 @@ const Home = () => {
                     </Flex>
 
                     {/* Home Page Button */}
-                    <Box mt={20}>
-                        <CustomButton text="Register Now" url={''} />
+                    <Box mt={10}>
+                        {(HomeBreakPoint=="base") ? 
+                        <CustomButton text="Register Now" url={'https://tally.so/r/wbdOL7'} width='150px' height='40px' fontSize='16' />
+                        : 
+                        <CustomButton text="Register Now" url={'https://tally.so/r/wbdOL7'} />} 
                     </Box>
                 </Flex>
             </Flex>

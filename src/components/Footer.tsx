@@ -41,10 +41,15 @@ export default function Footer() {
                             <Logo textColor={'black'} fontSize={"30px"} marginBottom={'0'} />
                         </Link>
                         <br></br>
+
+
                         <Link _hover={{ color: 'red', transform: 'translateX(5px)' }} href='#about-us'>About Us</Link>
-                        <Link _hover={{ color: 'red', transform: 'translateX(5px)' }} href='#timeline'>Timeline</Link>
+                        <Link _hover={{ color: 'red', transform: 'translateX(5px)' }} href='#panelists'>Panelists</Link>
+                        <Link _hover={{ color: 'red', transform: 'translateX(5px)' }} href='#judgement'>Judge & Mentor</Link>
                         <Link _hover={{ color: 'red', transform: 'translateX(5px)' }} href='#sponsors'>Sponsors</Link>
                         <Link _hover={{ color: 'red', transform: 'translateX(5px)' }} href='#FAQs'>FAQs</Link>
+                        <Link _hover={{ color: 'red', transform: 'translateX(5px)' }} href='#contact-us'>Contact Us</Link>
+                        
                     </Flex>
                 </Flex>
 

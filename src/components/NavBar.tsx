@@ -126,17 +126,7 @@ function NavBarDesktop({ pages }: { pages: Page[] }) {
 
                 {/* NavBar Logo */}
                 <Link href={'#home'} _hover={{ textDecoration: 'none' }}>
-                        <Box 
-                            position={'absolute'}
-                            top={5}
-                            ml={20}
-                            zIndex={20}
-                            left={innerWidth/2-50}
-                            >
-                           
                             <Logo fontSize="1.5rem" />
-                      
-                        </Box>
                 </Link>
 
                 {/* NavBarDesktop */}
