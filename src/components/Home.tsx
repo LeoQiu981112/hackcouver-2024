@@ -10,7 +10,7 @@ const Home = () => {
 
     const LogoTextSize = useBreakpointValue(
         {
-            base: '4rem',
+            base: '3rem',
             md: '8rem',
         },
     )
@@ -53,15 +53,15 @@ const Home = () => {
                         id="Home-Info-Flex"
                         direction={{ base: "column", md: "row" }}
                         align={'center'}
-                        gap={{ base: 10, md: 200 }}
+                        gap={{ base: 1, md: 200 }}
                     >
-                        <Text fontSize={{ base: '1.5rem', md: '2rem' }} fontWeight="bold">Vancouver Convention Center</Text>
-                        <Text fontSize={{ base: '1.5rem', md: '2rem' }} fontWeight="bold">24 Mar 01 - 24 Mar 14</Text>
+                        <Text fontSize={{ base: '1.3rem', md: '2rem' }} fontWeight="bold">Vancouver Convention Center</Text>
+                        <Text fontSize={{ base: '1rem', md: '2rem' }} fontWeight="bold">24 Mar 01 - 24 Mar 14</Text>
                     </Flex>
 
                     {/* Home Page Button */}
-                    <Box>
-                        <CustomButton text="Register Now" url="https://tally.so/r/wbdOL7" />
+                    <Box mt={20}>
+                        <CustomButton text="Register Now" url={''} />
                     </Box>
                 </Flex>
             </Flex>

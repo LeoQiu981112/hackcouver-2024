@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { IconButton } from '@chakra-ui/react'
-import { Link, useDisclosure, SlideFade, Flex, Box } from '@chakra-ui/react';
-import { ExternalLinkIcon, AddIcon, HamburgerIcon } from '@chakra-ui/icons'
+import { IconButton, Link } from '@chakra-ui/react'
+import { useDisclosure, SlideFade, Flex, Box } from '@chakra-ui/react';
+import { HamburgerIcon } from '@chakra-ui/icons'
 import {
     Menu,
     MenuButton,
@@ -25,7 +25,7 @@ export default function NavBar() {
     const NavBreakPoint = useBreakpointValue(
         {
           base: 'base',
-          md: '8rem',
+          md: '48rem',
         },
     )
 
@@ -75,23 +75,29 @@ export default function NavBar() {
         //     name: 'Timeline',
         //     path: '#timeline',
         // },
+      
+        {
+            name: 'Panelists',
+            path: '#panelists',
+            
+        },
+        {
+            name: 'Judge & Mentor',
+            path: '#judgement',
+        },
         {
             name: 'Sponsors',
             path: '#sponsors',
         },
         {
-            name: 'Panelists',
-            path: '#panelists',
+            name: 'FAQ',
+            path: '#FAQs',
         },
         {
             name: 'Contact Us',
             path: '#contact-us',
         },
-        {
-            name: 'FAQ',
-            path: '#FAQs',
-        },
-
+       
     ]
 
     return (
@@ -109,18 +115,34 @@ function NavBarDesktop({ pages }: { pages: Page[] }) {
         <Flex
                 id="NavBar-Flex"
                 direction="row"
-                justify="center"
-                mx={10}
-                my={5}
-                gap={40}
+                position='fixed'
+                bg={'#2f2440'}
+                zIndex={20}
+                w={'100%'}
+                py={'1rem'}
+                px={'8rem'}
+                justify="space-between"
                 >
-                <Box>
-                    <Logo fontSize="1.5rem" />
-                </Box>
+
+                {/* NavBar Logo */}
+                <Link href={'#home'} _hover={{ textDecoration: 'none' }}>
+                        <Box 
+                            position={'absolute'}
+                            top={5}
+                            ml={20}
+                            zIndex={20}
+                            left={innerWidth/2-50}
+                            >
+                           
+                            <Logo fontSize="1.5rem" />
+                      
+                        </Box>
+                </Link>
+
+                {/* NavBarDesktop */}
                 <Flex
-                    bg="#2F2440"
                     opacity={0.9}
-                    gap={{ sm: 5, md: 10 }}
+                    gap={10}
                     fontSize="1rem" // Smaller font size for the text
                     >
                     {pages.map((page, index) => (
@@ -139,45 +161,63 @@ function NavBarMobile({pages }: { pages: Page[] }) {
     return (
         <>
             
-                <Box
-                    top={0}
+                <Flex
+                    top={-1}
                     left={0}
                     position="fixed"
+                    zIndex={20}
+                    bg={'#342847'}
+                    w={'100%'}
+                    justify={'space-between'}
+                    py={'10px'}
                     >
 
-                
-                    <Menu
-                        id="NavBar-Menu"
-                        >
-                        
-                    <MenuButton
-                        as={IconButton}
-                        aria-label='Options'
-                        icon={<HamburgerIcon boxSize={5} />}
-                        w={'3rem'}
-                        h={'3rem'}
-                        bg={'white'}
-                        />
-                    <MenuList>
-                        <MenuItem icon={<AddIcon />} command='⌘T'>
-                        New Tab
-                        </MenuItem>
-                        <MenuItem icon={<ExternalLinkIcon />} command='⌘N'>
-                        New Window
-                        </MenuItem>
-                    </MenuList>
+                    <Menu id="NavBar-Menu" closeOnSelect={true} autoSelect={false}>
+
+                        <MenuButton
+                            as={IconButton}
+                            aria-label='Options'
+                            icon={<HamburgerIcon boxSize={8} color={'#B94949'} />}
+                            outline={'none'}
+                            border={'none'}
+                            bg={'none'}
+                            w={'50px'}
+                            h={'50px'}
+                            _hover={{ outline: 'none'}}
+                            _active={{ outline: 'none'}}
+                            />
+
+                            <MenuList textColor={'black'} _hover={{outline:'none', border:'none', textColor:"#2F2440"}}>
+                                {pages.map((page, index) => (
+                                    <MenuItem
+                                        style={{textDecoration: 'none'}}
+                                        _hover={{outline:'none', border:'none', textColor:"#2F2440"}}>
+                                        
+                                        <Link href={page.path} key={index} _hover={{textDecoration: 'none'}}>
+                                            {page.name}
+                                        </Link>
+                                    </MenuItem>
+                                ))}
+                            </MenuList>
                     </Menu>
-                </Box>
+                            
+                    {/* NavBar Logo */}
+                    <Link href={'#home'} _hover={{ textDecoration: 'none' }}>
+                        <Box 
+                            position={'absolute'}
+                            top={5}
+                            zIndex={20}
+                            left={innerWidth/2-50}
+                            >
+                           
+                            <Logo fontSize="1.5rem" />
+                      
+                        </Box>
+                    </Link>
 
-                <Flex
-                    id="NavBar-Logo-Flex"
-                    direction="row"
-                    justify="center"
-                    align={'center'}
-                    my={3}
-                    >
-                    <Logo fontSize="1.5rem" />
                 </Flex>
+
+
 
            
         </>
