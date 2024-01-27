@@ -3,7 +3,7 @@ import { Button as ChakraButton } from '@chakra-ui/react';
 
 interface ButtonProps {
     text: string;
-    url: string;
+    url?: string;
     width?: string;
     height?: string;
     fontSize?: string;
@@ -34,6 +34,7 @@ const CustomButton: React.FC<ButtonProps> = ({ text, url, width='250px', height=
             _hover={{
                 color: "pink",
             }}
+
         >
             {text}
         </ChakraButton>

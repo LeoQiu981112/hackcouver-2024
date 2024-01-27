@@ -1,5 +1,5 @@
 
-import Page from "./pages/Page";
+import Page from "./pages/LandingPage";
 
 const App: React.FC = () => (
   <Page />

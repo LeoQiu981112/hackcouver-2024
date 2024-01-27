@@ -2,7 +2,6 @@ import {
     Box,
     Flex,
     Grid,
-
 } from "@chakra-ui/react";
 
 import {
@@ -15,14 +14,23 @@ import {
 import Logo from "./Logo";
 import instagram from "../assets/instagram_logo.png";
 import linkendin from "../assets/linkendin_logo.png";
-
+import { navLinks } from "./informationLists";
+import { useBreakpointValue } from "@chakra-ui/react";
 
 export default function Footer() {
+
+    const BreakPoint = useBreakpointValue(
+        {
+          base: 'base',
+          md: '48rem',
+        },
+    )
+
     return (
         <>
             <Grid
+                mt='2rem'
                 id='Footer-grid'
-                gap={{base: 2, md: ''}}
                 templateColumns={{ base: '1fr', md: 'repeat(3, 1fr)' }}
                 width='full'>
 
@@ -31,32 +39,38 @@ export default function Footer() {
                 <Flex
                     justify='center'
                     align='center'
-                    m={8}>
+                    m={8}
+                    zIndex={10}
+                    >
 
                     <Flex
                         id="Footer-logo-flex"
                         direction="column"
-                        align='left'>
-                        <Link _hover={{ transform: ['scale(1.1)', 'translateX(-10px)'], transition: 'transform .2s ease-in-out' }} href='#'>
+                        align={(BreakPoint=='base')? 'center':'left'}>
+                            
+                        {/* Hackathon Logo */}    
+                        <Link _hover={{ color: 'red', transform: ['scale(1.1)', 'translateX(-10px)'], transition: 'transform .2s ease-in-out' }} href='#'>
                             <Logo textColor={'black'} fontSize={"30px"} marginBottom={'0'} />
                         </Link>
                         <br></br>
 
+                        {/* Footer Navigation Links */}
+                        {navLinks.map((component, index) => (
+                            <Link   
+                                key = {index}
+                                _hover={{ color: 'red', transform: 'translateX(5px)' }} 
+                                my={(BreakPoint=='base')? '10px':'2px'}
+                                href={component.path}>
+                                {component.name}
+                                </Link>
 
-                        <Link _hover={{ color: 'red', transform: 'translateX(5px)' }} href='#about-us'>About Us</Link>
-                        <Link _hover={{ color: 'red', transform: 'translateX(5px)' }} href='#panelists'>Panelists</Link>
-                        <Link _hover={{ color: 'red', transform: 'translateX(5px)' }} href='#judgement'>Judge & Mentor</Link>
-                        <Link _hover={{ color: 'red', transform: 'translateX(5px)' }} href='#sponsors'>Sponsors</Link>
-                        <Link _hover={{ color: 'red', transform: 'translateX(5px)' }} href='#FAQs'>FAQs</Link>
-                        <Link _hover={{ color: 'red', transform: 'translateX(5px)' }} href='#contact-us'>Contact Us</Link>
-                        
+                        ))}
                     </Flex>
                 </Flex>
 
                 <Flex>
-
+                    {/* Empty Box Divider Hack Job */}
                 </Flex>
-
 
 
                 {/* Social Media Links  */}

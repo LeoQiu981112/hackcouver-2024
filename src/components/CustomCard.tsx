@@ -1,5 +1,8 @@
-import React from 'react';
-import { Box, Image, Heading, Avatar } from '@chakra-ui/react';
+import { Box, Avatar } from '@chakra-ui/react';
+
+interface CustomCardProps {
+    imageUrl: string;
+}
 
 const CustomCard = ({ imageUrl }) => {
     return (

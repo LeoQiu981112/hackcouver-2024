@@ -1,5 +1,5 @@
-import React, { useRef, useEffect, useState } from 'react';
-import { Box, Text } from '@chakra-ui/react';
+import React, { useRef, useEffect } from 'react';
+import { Box } from '@chakra-ui/react';
 
 const RotatingSquare: React.FC = () => {
     const shadowRef = useRef<HTMLDivElement>(null);

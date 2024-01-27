@@ -11,7 +11,7 @@ import About from "../components/About";
 import Sponsors from "../components/Sponsors";
 import Panelists from "../components/Panelists";
 import JudgeMentor from "../components/JudgeMentor";
-import Contact from "../components/Contact";
+import Contact from "../components/ContactUs";
 import FAQ from '../components/FAQ';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
