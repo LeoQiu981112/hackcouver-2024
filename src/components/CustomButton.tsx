@@ -13,7 +13,7 @@ const CustomButton: React.FC<ButtonProps> = ({ text, url, width='250px', height=
     return (
         <ChakraButton
             color="#FFCBA4"
-            colorScheme='red'
+            bg='#E53E3E'
             fontSize={fontSize}
             w={width}
             h={height}
