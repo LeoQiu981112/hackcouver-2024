@@ -53,7 +53,7 @@ export default function JudgeMentor() {
     ]
 
     // Define responsive sizes for avatar and text
-    const avatarSize = useBreakpointValue({ base: "md", md: "lg" });
+    const avatarSize = useBreakpointValue({ base: "md", md: "xl" });
     const textSize = useBreakpointValue({ base: "sm", md: "md" });
 
     return (
