@@ -132,7 +132,7 @@ export default function Contact() {
 
                     <Button
                         color="#FFCBA4"
-                        colorScheme='red'
+                        bg='#E53E3E'
                         fontSize={'16'}
                         mt='2rem'
                         w={(BreakPoint=='base'? '200px':'300px')}
