@@ -121,7 +121,6 @@ function NavBarMobile({ components }: { components: PageComponent[] }) {
                     icon={<HamburgerIcon boxSize={8} color={'#B94949'} />}
                     outline={'none'}
                     border={'none'}
-                    bg={'none'}
                     position={'fixed'}
                     w={'50px'}
                     h={'50px'}
@@ -130,10 +129,11 @@ function NavBarMobile({ components }: { components: PageComponent[] }) {
                     zIndex={30}
                 />
 
-                <MenuList textColor={'black'} _hover={{ outline: 'none', border: 'none', textColor: "#2F2440" }}>
+                <MenuList textColor={'black'} bgColor={'white'} _hover={{ outline: 'none', border: 'none', textColor: "#2F2440" }}>
                     {components.map((component, index) => (
                         <MenuItem
                             key={index}
+                            bgColor={'white'}
                             style={{ textDecoration: 'none' }}
                             _hover={{ outline: 'none', border: 'none', textColor: "#2F2440" }}>
 
