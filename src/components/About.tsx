@@ -15,7 +15,7 @@ export default function About() {
     const textFontSize = useBreakpointValue({ base: "sm", md: "md", lg: "lg" });
 
     return (
-        <Flex direction='column' align='center' justify='center' mt={isMobile ? 0 : -20}>
+        <Flex direction='column' align='center' justify='center' mt={isMobile ? 0 : -20} >
             <Flex direction={flexDirection} align='center' justify='center' mx={isMobile ? 0 : '1rem'} my='2rem' gap='10' wrap='wrap'>
                 <Heading as='h1' size='2xl' my='2rem' textAlign='center'>Welcome to Hackcouver!</Heading>
                 <Flex direction={flexDirection} width={isMobile ? '100%' : '75vw'} align='center' justify='center'>
@@ -33,8 +33,13 @@ export default function About() {
                             &gt; where innovation meets community! Our hackathon is a dynamic event designed for tech enthusiasts to collaborate, create, and showcase their projects in a fast-paced environment.
                         </Text>
                     </Box>
+
                 </Flex>
             </Flex>
+            <Heading as='h1' size='2xl' my='2rem' textAlign='center'>What you will gain!</Heading>
+            <Image
+                src={ide_image}
+            />
         </Flex>
     );
 }
