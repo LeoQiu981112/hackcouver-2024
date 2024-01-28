@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { navLinks } from './informationLists'; 
+import { navLinks } from './informationLists';
 import { IconButton, Link } from '@chakra-ui/react'
 import { useDisclosure, SlideFade, Flex } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons'
@@ -8,7 +8,7 @@ import {
     MenuButton,
     MenuList,
     MenuItem,
-  } from '@chakra-ui/react'
+} from '@chakra-ui/react'
 import Logo from './Logo';
 import { useBreakpointValue } from '@chakra-ui/react'
 
@@ -21,12 +21,12 @@ export default function NavBar() {
     const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: true });
     const [lastScrollY, setLastScrollY] = useState(0);
 
-    
-    
+
+
     const NavBreakPoint = useBreakpointValue(
         {
-          base: 'base',
-          md: '48rem',
+            base: 'base',
+            md: '48rem',
         },
     )
 
@@ -65,7 +65,7 @@ export default function NavBar() {
 
     return (
         <SlideFade in={isOpen} offsetY="20px">
-            {(NavBreakPoint=="base") ? <NavBarMobile components={navLinks}/> : <NavBarDesktop components={navLinks}/> } 
+            {(NavBreakPoint == "base") ? <NavBarMobile components={navLinks} /> : <NavBarDesktop components={navLinks} />}
         </SlideFade >
     );
 }
@@ -75,7 +75,7 @@ function NavBarDesktop({ components }: { components: PageComponent[] }) {
 
     return (
         <>
-        <Flex
+            <Flex
                 id="NavBar-Flex"
                 direction="row"
                 position='fixed'
@@ -85,11 +85,11 @@ function NavBarDesktop({ components }: { components: PageComponent[] }) {
                 py={'1rem'}
                 px={'8rem'}
                 justify="space-between"
-                >
+            >
 
                 {/* NavBar Logo */}
                 <Link href={'#home'} _hover={{ textDecoration: 'none' }}>
-                            <Logo fontSize="1.5rem" />
+                    <Logo fontSize="1.5rem" />
                 </Link>
 
                 {/* NavBarDesktop */}
@@ -97,7 +97,7 @@ function NavBarDesktop({ components }: { components: PageComponent[] }) {
                     opacity={0.9}
                     gap={10}
                     fontSize="1rem" // Smaller font size for the text
-                    >
+                >
                     {components.map((component, index) => (
                         <Link href={component.path} key={index} _hover={{ textDecoration: 'none' }}>
                             {component.name}
@@ -121,30 +121,30 @@ function NavBarMobile({ components }: { components: PageComponent[] }) {
                     icon={<HamburgerIcon boxSize={8} color={'#B94949'} />}
                     outline={'none'}
                     border={'none'}
-                    bg={'white'}
+                    bg={'none'}
                     position={'fixed'}
                     w={'50px'}
                     h={'50px'}
-                    _hover={{ outline: 'none'}}
-                    _active={{ outline: 'none'}}
+                    _hover={{ outline: 'none' }}
+                    _active={{ outline: 'none' }}
                     zIndex={30}
-                    />
+                />
 
-                    <MenuList textColor={'black'} _hover={{outline:'none', border:'none', textColor:"#2F2440"}}>
-                        {components.map((component, index) => (
-                            <MenuItem
-                                key={index}
-                                style={{textDecoration: 'none'}}
-                                _hover={{outline:'none', border:'none', textColor:"#2F2440"}}>
-                                
-                                <Link href={component.path} key={index} _hover={{textDecoration: 'none'}}>
-                                    {component.name}
-                                </Link>
-                            </MenuItem>
-                        ))}
-                    </MenuList>
+                <MenuList textColor={'black'} _hover={{ outline: 'none', border: 'none', textColor: "#2F2440" }}>
+                    {components.map((component, index) => (
+                        <MenuItem
+                            key={index}
+                            style={{ textDecoration: 'none' }}
+                            _hover={{ outline: 'none', border: 'none', textColor: "#2F2440" }}>
+
+                            <Link href={component.path} key={index} _hover={{ textDecoration: 'none' }}>
+                                {component.name}
+                            </Link>
+                        </MenuItem>
+                    ))}
+                </MenuList>
             </Menu>
-            
+
             <Flex
                 bg={'#342847'}
                 position={'fixed'}
@@ -153,19 +153,19 @@ function NavBarMobile({ components }: { components: PageComponent[] }) {
                 w={'100%'}
                 h={'3rem'}
                 zIndex={20}
-                >
-    
-                <Link href="#" textDecoration={'none'} _hover={{ textDecoration: 'none', color: 'none' }} > 
+            >
+
+                <Link href="#" textDecoration={'none'} _hover={{ textDecoration: 'none', color: 'none' }} >
                     <Logo fontSize="1.5rem" />
                 </Link>
             </Flex>
 
 
-                
 
 
 
-           
+
+
         </>
     );
 }
