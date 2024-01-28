@@ -121,7 +121,7 @@ function NavBarMobile({ components }: { components: PageComponent[] }) {
                     icon={<HamburgerIcon boxSize={8} color={'#B94949'} />}
                     outline={'none'}
                     border={'none'}
-                    bg={'none'}
+                    bg={'white'}
                     position={'fixed'}
                     w={'50px'}
                     h={'50px'}
